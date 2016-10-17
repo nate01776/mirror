@@ -60,7 +60,12 @@ $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
-$body-background: $white;
+$ov-1: #e2ece5;
+$ov-2: #d8e3de;
+$ov-3: #c5d2cf;
+$ov-4: #b7c5c5;
+$ov-5: #aab6b9;
+$body-background: $ov-1;
 $body-font-color: $black;
 $body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
@@ -564,4 +569,3 @@ $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 1rem;
 $topbar-input-width: 200px;
 $topbar-unstack-breakpoint: medium;
-
