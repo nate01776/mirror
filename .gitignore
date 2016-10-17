@@ -18,3 +18,5 @@
 
 # Non standard additions
 /coverage
+.env
+.coveralls.yml

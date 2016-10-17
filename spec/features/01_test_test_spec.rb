@@ -1,4 +1,3 @@
-require 'spec_helper'
 require 'rails_helper'
 
 describe 'Test should check spec files are set correctly' do
