@@ -18,5 +18,5 @@
 
 # Non standard additions
 /coverage
-.env
+.env.rb
 .coveralls.yml

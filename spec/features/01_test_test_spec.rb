@@ -6,5 +6,6 @@ describe 'Test should check spec files are set correctly' do
 
     scenario 'blank test should never fail' do
     end
+    
   end
 end
