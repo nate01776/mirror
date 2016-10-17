@@ -15,3 +15,8 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Non standard additions
+/coverage
+.env.rb
+.coveralls.yml
