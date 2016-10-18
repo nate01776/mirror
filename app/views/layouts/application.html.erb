@@ -19,7 +19,7 @@
           <span class="title-bar-title">
             <% if current_user %>
               <%= link_to raw("<i class='fa fa-times-circle fa-2x custom-menu-icon' aria-hidden='true'></i>"), destroy_user_session_path, method: :delete  %>
-              signed in as: <%= current_user.username %>
+              <span class="current-user-name">signed in as: <%= current_user.username %></span>
             <% end %>
           </span>
         </div>

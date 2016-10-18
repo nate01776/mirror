@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   root "login#index"
 
   resources :login, only: [:index]
+
+  resources :user, only: [:show]
 end

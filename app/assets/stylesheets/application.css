@@ -42,6 +42,10 @@
   width: 100px;
 }
 
+.current-user-name {
+  font-family: 'Quicksand', sans-serif;
+}
+
 .flash-container {
   text-align: center;
   background: #DCD6D4;
@@ -52,15 +56,12 @@
   padding: 10px;
 }
 
-.user-info {
-  text-align: center;
-  padding: 10px;
-}
-
 .login-box {
   text-align: center;
   background: white;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  margin-bottom: 50px;
+  padding-bottom: 20px;
 }
 
 .login-box h1 {
@@ -68,6 +69,7 @@
   color: white;
   padding: 10px;
   font-family: 'Quicksand', sans-serif;
+  margin-bottom: 0px;
 }
 
 .login-box h4 {
@@ -78,7 +80,7 @@
 }
 
 .login-buttons {
-  padding-bottom: 10px;
+  padding-top: 20px;
 }
 
 .login-page-button {
@@ -103,4 +105,19 @@
   font-size: 18px;
   font-family: 'Quicksand', sans-serif;
   font-weight: bold;
+}
+
+.devise-errors {
+  background: #CF6766;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.devise-errors h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.devise-errors ul {
+  list-style: none;
 }
