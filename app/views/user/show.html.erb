@@ -1,15 +1,14 @@
 <div class="row">
-  <div class="small-12 medium-10 large-10 large-centered medium-centered columns login-box">
+  <div class="small-12 medium-10 large-10 large-centered medium-centered columns user-box">
     <div class="row">
-      <h1><%= @user.username %></h1>
+      <h1><%= @user.username %> - <%= @status %></h1>
     </div>
     <div class="row">
-      <div class="small-2 columns">
-        <h4>Add Image</h4>
+      <div class="small-6 columns">
+        <h4>Add Image stuff here</h4>
       </div>
-      <div class="small-8 columns">
+      <div class="small-6 columns">
         <h3>
-          <b>status:</b> <%= @status %><br />
           <b>first name:</b> <%= @user.first_name %><br />
           <b>last name:</b> <%= @user.last_name %><br />
           <b>email:</b> <%= @user.email %>
