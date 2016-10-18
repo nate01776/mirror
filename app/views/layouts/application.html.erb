@@ -21,8 +21,11 @@
       <div class="title-bar-right site-logo">
         <%= image_tag('logo.png')%>
       </div>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <% flash.each do |key, value| %>
+        <div class="flash-container">
+          <%= value %>
+        </div>
+      <% end %>
     </div>
     <%= yield %>
   </body>
