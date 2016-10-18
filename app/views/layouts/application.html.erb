@@ -13,17 +13,25 @@
   </head>
 
   <body>
-    <div class="title-bar custom-bar">
-      <div class="title-bar-left">
-        <button class="menu-icon custom-menu-icon" type="button"></button>
-        <span class="title-bar-title"></span>
-      </div>
-      <div class="title-bar-right site-logo">
-        <%= image_tag('logo.png')%>
+    <div class="custom-bar">
+      <div class="title-bar custom-title-bar">
+        <div class="title-bar-left widen">
+          <!-- <button class="menu-icon custom-menu-icon" type="button"></button> -->
+          <% if current_user %>
+            <div class="user-info">
+              <%= button_to 'sign out', destroy_user_session_path, method: :delete  %>
+              <p>Signed in as <%= current_user.email %></a></p>
+            </div>
+          <% end %>
+          <span class="title-bar-title"></span>
+        </div>
+        <div class="title-bar-right site-logo">
+          <%= image_tag('logo.png')%>
+        </div>
       </div>
       <% flash.each do |key, value| %>
         <div class="flash-container">
-          <%= value %>
+            <%= value %>
         </div>
       <% end %>
     </div>

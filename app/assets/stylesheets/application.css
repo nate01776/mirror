@@ -16,9 +16,12 @@
 
  */
 
- .custom-bar {
+ .custom-title-bar {
    background: #aab6b9;
    height: 75px;
+ }
+
+ .custom-bar {
    margin-bottom: 50px;
  }
 
@@ -30,14 +33,53 @@
   width: 100px;
 }
 
+.flash-container {
+  text-align: center;
+  background: #DCD6D4;
+  margin-top: 0;
+  color: black;
+  font-size: 16px;
+  font-family: 'Quicksand', sans-serif;
+  padding: 10px;
+}
+
+.user-info {
+  text-align: center;
+  padding: 10px;
+}
+
 .login-box {
   text-align: center;
   background: white;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
-.header {
+.login-box h1 {
   background: #aab6b9;
   color: white;
   padding: 10px;
   font-family: 'Quicksand', sans-serif;
+}
+
+.login-box h4 {
+  color: black;
+  font-size: 16px;
+  padding: 10px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.login-buttons {
+  padding-bottom: 10px;
+}
+
+.login {
+  background: #aab6b9;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 20%;
+  font-size: 18px;
+}
+
+.login:hover {
+  background: #767F81;
 }
