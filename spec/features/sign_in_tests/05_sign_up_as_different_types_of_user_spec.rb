@@ -44,6 +44,7 @@ describe 'User sign in page' do
       expect(page).to have_content('factorygirl@gmail.com')
       expect(page).to have_content('factorygirl')
       expect(page).to have_content('owner')
+      binding.pry
     end
   end
 end

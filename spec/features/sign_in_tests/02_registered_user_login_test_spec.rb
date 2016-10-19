@@ -68,6 +68,7 @@ describe 'User sign in page' do
       expect(page).to have_content(user_owner.first_name)
       expect(page).to have_content(user_owner.last_name)
       expect(page).to have_content('owner')
+      binding.pry
     end
   end
 end
