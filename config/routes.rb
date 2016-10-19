@@ -9,8 +9,7 @@ Rails.application.routes.draw do
       sign_up: 'cmon_let_me_in' }
 
   root "user#show"
-
   resources :login, only: [:index]
-
   resources :user, only: [:show]
+  resources :salon, only: [:new, :create, :show]
 end

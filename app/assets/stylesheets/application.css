@@ -101,6 +101,24 @@
   border-radius: 2px;
 }
 
+.new-salon-button {
+  background: red;
+  margin-top: 10px;
+  font-size: 18px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
+  border-radius: 50%;
+}
+
+.new-salon-button:hover {
+  background: #CC0000;
+  box-shadow: 0 1.5px 3px rgba(0,0,0,0.16), 0 1.5px 3px rgba(0,0,0,0.23);
+}
+
+.new-salon-button:active {
+  background: #D63232;
+  box-shadow: 0 4px 7px rgba(0,0,0,0.16), 0 4px 7px rgba(0,0,0,0.23);
+}
+
 .login-page-button:hover {
   background: #babfc0;
   box-shadow: 0 1.5px 3px rgba(0,0,0,0.16), 0 1.5px 3px rgba(0,0,0,0.23);

@@ -2,5 +2,11 @@
   <h1>owner management console</h1>
 </div>
 <div class="row">
-  
+  <% @user.salons.each do |salon| %>
+    <div class="row">
+      <%= salon.name %>
+    </div>
+    <hr class="user-info-hr">
+  <% end %>
+  <%= link_to '+', new_salon_path, class:"button new-salon-button" %>
 </div>
