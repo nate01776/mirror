@@ -1,2 +1,2 @@
-class LoginController < ApplicationController  
+class LoginController < ApplicationController
 end
