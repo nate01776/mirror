@@ -1,20 +1,7 @@
 <div class="row">
 
   <div class="small-12 large-3 columns user-box">
-    <div class="row">
-      <h1><%= @user.username %></h1>
-    </div>
-    <div class="row">
-      <div class="row">
-        <h4>Add Image stuff here</h4>
-      </div>
-      <hr class="user-info-hr">
-      <div class="user-info">
-          <h3><b>first name:</b> <%= @user.first_name %><br /></h3>
-          <h3><b>last name:</b> <%= @user.last_name %><br /></h3>
-          <h3><b>email:</b> <%= @user.email %></h3>
-      </div>
-    </div>
+    <%= render 'user-info' %>
   </div>
 
   <div class="small-12 large-8 columns user-box">

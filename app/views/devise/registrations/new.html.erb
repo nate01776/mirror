@@ -28,7 +28,7 @@
         <%= f.password_field :password, autocomplete: "off" %>
       </div>
 
-      <div class="field login-field drop-down">
+      <div class="field login-field">
         <br /><%= f.label :password_confirmation , "confirm password" , class: "login-title"%>
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
       </div>
@@ -49,7 +49,11 @@
       </div>
 
       <div class="actions">
-        <%= f.submit "Sign up" %>
+        <a href="/" class="button login-page-button" id="log-in-button"><</a>
+        <input class="submit button login-page-button"
+          id="user_submit" name="commit"
+          type="submit"
+          value="sign up" />
       </div>
     <% end %>
   </div>

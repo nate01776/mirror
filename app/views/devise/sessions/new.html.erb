@@ -15,8 +15,13 @@
       </div>
 
       <div class="actions login-buttons">
-        <%= f.submit "Log in", class:"login-page-button" %>
+        <a href="/" class="button login-page-button" id="log-in-button"><</a>
+        <input class="submit button login-page-button"
+          id="user_submit" name="commit"
+          type="submit"
+          value="log in" />
       </div>
     <% end %>
+
   </div>
 </div>
