@@ -115,6 +115,10 @@
   font-weight: bold;
 }
 
+.drop-down {
+  text-align-last: center;
+}
+
 .devise-errors {
   background: #CF6766;
   font-family: 'Noto Sans', sans-serif;

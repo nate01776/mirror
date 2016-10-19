@@ -28,7 +28,7 @@
         <%= f.password_field :password, autocomplete: "off" %>
       </div>
 
-      <div class="field login-field">
+      <div class="field login-field drop-down">
         <br /><%= f.label :password_confirmation , "confirm password" , class: "login-title"%>
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
       </div>
@@ -41,6 +41,11 @@
       <div class="field login-field">
         <br /><%= f.label :last_name, "last name", class:"login-title" %>
         <%= f.text_field :last_name%>
+      </div>
+
+      <div class="field login-field drop-down" id="user-type">
+        <%= f.label :user_type, "please select how you will use this site" %>
+        <%= f.select :user_type, [['client', 'client'], ['stylist', 'stylist'], ['owner', 'owner']] %>
       </div>
 
       <div class="actions">

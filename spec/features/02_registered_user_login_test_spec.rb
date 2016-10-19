@@ -3,8 +3,8 @@ require 'rails_helper'
 describe 'User sign in page' do
   feature 'should allow existing users to sign in' do
     let!(:user_client) { create(:user) }
-    let!(:user_stylist) { create(:user, is_stylist: true) }
-    let!(:user_owner) { create(:user, is_owner: true) }
+    let!(:user_stylist) { create(:user, user_type: 'stylist') }
+    let!(:user_owner) { create(:user, user_type: 'owner') }
 
     scenario 'should see log in button on homepage' do
       visit '/'
