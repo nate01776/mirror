@@ -6,7 +6,7 @@ class RemoveIsOwnerandstylistAddUserType < ActiveRecord::Migration[5.0]
   end
 
   def down
-    remove_column :users, :is_owner, :string
+    remove_column :users, :user_type, :string
     add_column :users, :is_owner, :boolean, null: false, default: false
     add_column :users, :is_stylist, :boolean, null: false, default: false
   end
