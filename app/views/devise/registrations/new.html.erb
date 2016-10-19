@@ -43,6 +43,11 @@
         <%= f.text_field :last_name%>
       </div>
 
+      <!-- <div class="row">
+        <%= f.label :user_type, "please select how you will use this site" %>
+        <%= f.select :user_type, options_for_select([["Client", "t"], ["Stylist", "s"]]) %>
+      </div> -->
+
       <div class="actions">
         <%= f.submit "Sign up" %>
       </div>
