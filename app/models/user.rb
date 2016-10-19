@@ -10,13 +10,11 @@ class User < ApplicationRecord
   validates_format_of :email, with: /\A[\w]([^@\s,;]+)@(([\w-]+\.)+(com|edu|org|net|gov|mil|biz|info))\z/i, uniqueness: true
   validates :password, presence: true, length: { minimum: 6 }
 
-  def status
-    if is_owner
-      return "owner"
-    elsif is_stylist
-      return "stylist"
-    else
-      return "client"
-    end
+  def is_owner?
+    user_type == "owner"
+  end
+
+  def is_stylist?
+    user_type == "stylist"
   end
 end

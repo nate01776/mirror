@@ -1,6 +1,6 @@
 class UserController < ApplicationController
   def show
     @user = current_user
-    @status = @user.status
+    @status = @user.user_type
   end
 end
