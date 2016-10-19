@@ -133,7 +133,8 @@
 .page-footer {
   background: #FAF8F8;
   text-align: right;
-  padding: 10px;
+  padding-top: 5px;
+  padding-right: 10px;
   position: fixed;
   bottom: 0;
   width: 100%;
