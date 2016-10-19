@@ -6,9 +6,9 @@ class SalonController < ApplicationController
   def create
     @salon = Salon.new(salon_params)
     @salon.user = current_user
-    if @location.save
-      redirect_to location_path(@location)
-      flash[:notice] = "Location added successfully"
+    if @salon.save
+      redirect_to root_path
+      flash[:notice] = "Salon added successfully"
     else
       flash[:notice] = @location.errors.full_messages.join(", ")
       render :new

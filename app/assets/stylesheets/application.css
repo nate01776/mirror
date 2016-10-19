@@ -102,11 +102,12 @@
 }
 
 .new-salon-button {
-  background: red;
-  margin-top: 10px;
+  background: #D63232;
+  margin-right: 30px;
   font-size: 18px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
-  border-radius: 50%;
+  border-radius: 2px;
+  float: right;
 }
 
 .new-salon-button:hover {
