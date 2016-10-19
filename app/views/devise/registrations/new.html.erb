@@ -43,7 +43,7 @@
         <%= f.text_field :last_name%>
       </div>
 
-      <div class="field login-field drop-down">
+      <div class="field login-field drop-down" id="user-type">
         <%= f.label :user_type, "please select how you will use this site" %>
         <%= f.select :user_type, [['client', 'client'], ['stylist', 'stylist'], ['owner', 'owner']] %>
       </div>

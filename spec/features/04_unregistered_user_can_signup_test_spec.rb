@@ -21,7 +21,7 @@ describe 'User sign in page' do
       expect(page).to have_field('last name')
     end
 
-    scenario 'should enter information into fields, click sign up and be logged in' do
+    scenario 'should enter information into fields, click sign up and be logged in as client' do
       visit '/'
       click_link 'sign up'
 
@@ -38,6 +38,7 @@ describe 'User sign in page' do
       expect(page).to have_content('Girl')
       expect(page).to have_content('factorygirl@gmail.com')
       expect(page).to have_content('factorygirl')
+      expect(page).to have_content('client')
     end
 
     scenario 'should provide errors if form incorrectly filled out' do
