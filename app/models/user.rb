@@ -9,4 +9,14 @@ class User < ApplicationRecord
    validates :username, presence: true, uniqueness: true
    validates_format_of :email, with: /\A[\w]([^@\s,;]+)@(([\w-]+\.)+(com|edu|org|net|gov|mil|biz|info))\z/i, uniqueness: true
    validates :password, presence: true, length: { minimum: 6 }
+
+   def status
+     if self.is_owner
+       return "owner"
+     elsif self.is_stylist
+       return "stylist"
+     else
+       return "client"
+     end
+   end
 end
