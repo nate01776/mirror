@@ -32,7 +32,7 @@ describe 'User sign in page' do
       fill_in 'first name', with: 'Factory'
       fill_in 'last name', with: 'Girl'
 
-      click_button 'Sign up'
+      click_button 'sign up'
 
       expect(page).to have_content('Factory')
       expect(page).to have_content('Girl')
@@ -49,7 +49,7 @@ describe 'User sign in page' do
       fill_in 'password', with: 'factorygirl'
       fill_in 'confirm password', with: 'factorygirl'
 
-      click_button 'Sign up'
+      click_button 'sign up'
 
       expect(page).to have_content('Email can\'t be blank')
       expect(page).to have_content('First name can\'t be blank')
@@ -67,7 +67,7 @@ describe 'User sign in page' do
       fill_in 'first name', with: 'Factory'
       fill_in 'last name', with: 'Girl'
 
-      click_button 'Sign up'
+      click_button 'sign up'
 
       expect(page).to have_content('Email is invalid')
     end
@@ -83,7 +83,7 @@ describe 'User sign in page' do
       fill_in 'first name', with: 'Factory'
       fill_in 'last name', with: 'Girl'
 
-      click_button 'Sign up'
+      click_button 'sign up'
 
       expect(page).to have_content('Email has already been taken')
     end
@@ -99,7 +99,7 @@ describe 'User sign in page' do
       fill_in 'first name', with: 'Factory'
       fill_in 'last name', with: 'Girl'
 
-      click_button 'Sign up'
+      click_button 'sign up'
 
       expect(page).to have_content('Username has already been taken')
     end

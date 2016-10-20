@@ -28,7 +28,7 @@
         <%= f.password_field :password, autocomplete: "off" %>
       </div>
 
-      <div class="field login-field drop-down">
+      <div class="field login-field">
         <br /><%= f.label :password_confirmation , "confirm password" , class: "login-title"%>
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
       </div>
@@ -43,13 +43,22 @@
         <%= f.text_field :last_name%>
       </div>
 
+      <div class="field login-field">
+        <br /><%= f.label :phone, "phone (optional)", class:"login-title" %>
+        <%= f.text_field :phone%>
+      </div>
+
       <div class="field login-field drop-down" id="user-type">
         <%= f.label :user_type, "please select how you will use this site" %>
         <%= f.select :user_type, [['client', 'client'], ['stylist', 'stylist'], ['owner', 'owner']] %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Sign up" %>
+        <a href="/" class="button login-page-button"><</a>
+        <input class="submit button login-page-button"
+          id="user_submit" name="commit"
+          type="submit"
+          value="sign up" />
       </div>
     <% end %>
   </div>

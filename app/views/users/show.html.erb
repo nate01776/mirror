@@ -1,0 +1,17 @@
+<div class="row">
+
+  <div class="small-12 large-3 columns user-box">
+    <%= render 'user-info' %>
+  </div>
+
+  <div class="small-12 large-8 columns user-box">
+    <% if @user.user_type == "owner" %>
+      <%= render 'owner' %>
+    <% elsif @user.user_type == "stylist" %>
+      <%= render 'stylist' %>
+    <% else %>
+      <%= render 'client' %>
+    <% end %>
+  </div>
+
+</div>
