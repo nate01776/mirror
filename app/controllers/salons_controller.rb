@@ -4,6 +4,7 @@ class SalonsController < ApplicationController
   end
 
   def show
+    @user = current_user
     @salon = Salon.find(params[:id])
   end
 

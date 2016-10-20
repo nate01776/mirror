@@ -234,14 +234,21 @@
 .salon-box {
   text-align: center;
   background: #FAF8F8;
-  margin-bottom: 50px;
   padding-bottom: 20px;
+}
+
+.salon-big-box {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
+  margin-bottom: 50px;
+}
+
+.clients {
+  border-right: 1px solid black;
 }
 
 .salon-box h1 {
   background: #aab6b9;
   color: #FAF8F8;
-  padding: 10px;
   font-family: 'Noto Sans', sans-serif;
   font-size: 24px;
   margin-bottom: 20px;
