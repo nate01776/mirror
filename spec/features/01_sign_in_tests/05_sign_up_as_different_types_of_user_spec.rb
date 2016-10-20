@@ -16,13 +16,13 @@ describe 'User sign in page' do
       fill_in 'last name', with: 'Girl'
       find('#user-type').select('stylist')
 
-      click_button 'Sign up'
+      click_button 'sign up'
 
       expect(page).to have_content('Factory')
       expect(page).to have_content('Girl')
       expect(page).to have_content('factorygirl@gmail.com')
       expect(page).to have_content('factorygirl')
-      expect(page).to have_content('stylist')
+      expect(page).to have_content('services')
     end
 
     scenario 'should enter information into fields, click sign up and be logged in as owner' do
@@ -37,14 +37,13 @@ describe 'User sign in page' do
       fill_in 'last name', with: 'Girl'
       find('#user-type').select('owner')
 
-      click_button 'Sign up'
+      click_button 'sign up'
 
       expect(page).to have_content('Factory')
       expect(page).to have_content('Girl')
       expect(page).to have_content('factorygirl@gmail.com')
       expect(page).to have_content('factorygirl')
       expect(page).to have_content('owner')
-      binding.pry
     end
   end
 end

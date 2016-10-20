@@ -24,7 +24,7 @@ describe 'User sign in page' do
       click_link 'log in'
       fill_in 'email', with: user_client.email
       fill_in 'password', with: user_client.password
-      click_button('Log in')
+      click_button('log in')
 
       expect(page).to have_content(user_client.username)
       expect(page).to have_content(user_client.first_name)
@@ -36,7 +36,7 @@ describe 'User sign in page' do
       click_link 'log in'
       fill_in 'email', with: user_client.email
       fill_in 'password', with: user_client.password
-      click_button('Log in')
+      click_button('log in')
 
       expect(page).to have_content(user_client.username)
       expect(page).to have_content(user_client.first_name)
@@ -49,12 +49,12 @@ describe 'User sign in page' do
       click_link 'log in'
       fill_in 'email', with: user_stylist.email
       fill_in 'password', with: user_stylist.password
-      click_button('Log in')
+      click_button('log in')
 
       expect(page).to have_content(user_stylist.username)
       expect(page).to have_content(user_stylist.first_name)
       expect(page).to have_content(user_stylist.last_name)
-      expect(page).to have_content('stylist')
+      expect(page).to have_content('services')
     end
 
     scenario 'owner user should see owner profile page' do
@@ -62,13 +62,12 @@ describe 'User sign in page' do
       click_link 'log in'
       fill_in 'email', with: user_owner.email
       fill_in 'password', with: user_owner.password
-      click_button('Log in')
+      click_button('log in')
 
       expect(page).to have_content(user_owner.username)
       expect(page).to have_content(user_owner.first_name)
       expect(page).to have_content(user_owner.last_name)
       expect(page).to have_content('owner')
-      binding.pry
     end
   end
 end

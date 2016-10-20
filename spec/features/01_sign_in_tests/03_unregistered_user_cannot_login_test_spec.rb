@@ -22,7 +22,7 @@ describe 'User sign in page' do
       click_link 'log in'
       fill_in 'email', with: 'unreg_user@gmail.com'
       fill_in 'password', with: 'test'
-      click_button('Log in')
+      click_button('log in')
 
       expect(page).to have_content('Invalid Email or password')
     end
