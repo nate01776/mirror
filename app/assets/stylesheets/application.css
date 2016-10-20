@@ -230,3 +230,24 @@
 .salon-pic {
   text-align: center;
 }
+
+.salon-box {
+  text-align: center;
+  background: #FAF8F8;
+  margin-bottom: 50px;
+  padding-bottom: 20px;
+}
+
+.salon-box h1 {
+  background: #aab6b9;
+  color: #FAF8F8;
+  padding: 10px;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.make-it-green {
+  background: green;
+}

@@ -3,6 +3,10 @@ class SalonsController < ApplicationController
     @salon = Salon.new
   end
 
+  def show
+    @salon = Salon.find(params[:id])
+  end
+
   def create
     @salon = Salon.new(salon_params)
     @salon.user = current_user

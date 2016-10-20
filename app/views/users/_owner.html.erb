@@ -6,14 +6,17 @@
       <div class="small-6 columns salon-pic">
         <p>image info here</p>
       </div>
-      <div class="small-6 columns salon-info">
-        <b><%= salon.name %></b><br />
-        <%= salon.address %>, <%= salon.city %> <%= salon.state %><br />
-        <%= salon.phone %><br />
-        <%= salon.email %><br /><br />
-        <%= link_to 'edit salon', edit_salon_path(salon.id), class:"button new-salon-button" %>
-      </div>
+      <a href="/salons/<%= salon.id %>">
+        <div class="small-6 columns salon-info">
+          <b><%= salon.name %></b><br />
+          <%= salon.address %>, <%= salon.city %> <%= salon.state %><br />
+          <%= salon.phone %><br />
+          <%= salon.email %><br /><br />
+          <%= link_to 'edit salon', edit_salon_path(salon.id), class:"button new-salon-button" %>
+        </div>
+      </a>
     </div>
+
     <hr class="user-info-hr">
   <% end %>
   <div class="row">

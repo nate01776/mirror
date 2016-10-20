@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="small-12 large-12 large-centered medium-centered columns user-box">
+    <div class="row">
+      <h1><%=@salon.name %></h1>
+    </div>
+    <div class="row">
+      <div class="small-4 columns salon-pic">
+        <p>image info here</p>
+      </div>
+        <div class="small-8 columns salon-info">
+          <h3>
+          address:<br>
+          <%= @salon.address %>, <%= @salon.city %> <%= @salon.state %><br><br>
+          phone:<br>
+          <%= @salon.phone %><br><br>
+          email:<br>
+          <%= @salon.email %><br><br>
+          </h3>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 large-4 columns salon-box">
+    <h1>info</h1>
+  </div>
+  <div class="small-12 large-4 columns salon-box">
+    <h1>info</h1>
+  </div>
+  <div class="small-12 large-4 columns salon-box">
+    <h1>info</h1>
+  </div>
+</div>
