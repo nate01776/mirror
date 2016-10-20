@@ -101,14 +101,16 @@
   margin-left: 10px;
   margin-right: 10px;
   width: 20%;
-  font-size: 18px;
+  padding: 5px;
+  font-size: 14px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
   border-radius: 2px;
 }
 
 .new-salon-button {
   background: #D63232;
-  font-size: 18px;
+  padding: 5px;
+  font-size: 14px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
   border-radius: 2px;
   vertical-align: middle;
@@ -218,4 +220,13 @@
 .user-info-hr {
   margin-left: 40px;
   margin-right: 40px;
+}
+
+.salon-info {
+  text-align: right;
+  padding-right: 30px;
+}
+
+.salon-pic {
+  text-align: center;
 }

@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   root "users#show"
   resources :login, only: [:index]
   resources :users, only: [:show]
-  resources :salons, only: [:new, :create, :show]
+  resources :salons, only: [:new, :create, :show, :edit, :update]
 end
