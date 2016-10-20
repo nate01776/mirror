@@ -3,7 +3,7 @@ require 'factory_girl_rails'
 FactoryGirl.define do
   factory :salon do
     sequence(:name) { |n| "salon #{n}" }
-    sequence(:address) { |n| "#{n}0 Fake St"}
+    sequence(:address) { |n| "#{n}0 Fake St" }
     city "Boston"
     state "MA"
     zip_code "02134"
