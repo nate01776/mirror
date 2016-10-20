@@ -240,6 +240,7 @@
 .salon-big-box {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
   margin-bottom: 50px;
+  background: #FAF8F8;
 }
 
 .clients {
@@ -255,6 +256,7 @@
   text-align: center;
 }
 
-.make-it-green {
-  background: green;
+.service-info {
+  text-align: left;
+  margin-left: 40px;
 }

@@ -4,7 +4,17 @@
       <h1>services</h1>
     </div>
     <div class="row clients">
-      <h3>data</h3>
+      <% @services.each do |service| %>
+        <div class="row">
+          <a href="/salons/<%= @salon.id %>/services/<%= service.id %>">
+            <div class="small-12 columns service-info">
+              <b><%= service.name %></b><br />
+              - <%= service.description %><br />
+            </div>
+          </a>
+        </div>
+        <hr class="user-info-hr">
+      <% end %>
     </div>
   </div>
 
@@ -13,7 +23,7 @@
       <h1>stylists</h1>
     </div>
     <div class="row">
-      <h3>data</h3>
+      <h3>some data</h3>
     </div>
   </div>
 </div>
