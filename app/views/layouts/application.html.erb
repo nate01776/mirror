@@ -19,7 +19,7 @@
           <span class="title-bar-title">
             <% if current_user %>
             <div class="small-4 columns">
-              <%= link_to 'X', destroy_user_session_path, method: :delete, class:"button new-salon-button" %>
+              <%= link_to 'X', destroy_user_session_path, method: :delete, class:"button new-salon-button", id:'sign-out' %>
             </div>
             <div class="small-6 columns">
               <span class="current-user-name "><p><b>signed in as:</b> <%= current_user.username %></p></span>
