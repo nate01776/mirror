@@ -2,6 +2,8 @@ class Salon < ApplicationRecord
   belongs_to :user
   has_many :services
   has_many :products
+  has_many :salonusers
+  has_many :users, through: :salonusers
 
   validates :name, presence: true
   validates :address, presence: true

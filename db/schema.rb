@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161021190314) do
+ActiveRecord::Schema.define(version: 20161021202240) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,13 @@ ActiveRecord::Schema.define(version: 20161021190314) do
     t.string  "zip_code",                     null: false
     t.integer "open_chair_count", default: 0, null: false
     t.index ["user_id"], name: "index_salons_on_user_id", using: :btree
+  end
+
+  create_table "salonusers", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "salon_id"
+    t.index ["salon_id"], name: "index_salonusers_on_salon_id", using: :btree
+    t.index ["user_id"], name: "index_salonusers_on_user_id", using: :btree
   end
 
   create_table "services", force: :cascade do |t|
