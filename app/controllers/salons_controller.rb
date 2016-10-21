@@ -7,6 +7,7 @@ class SalonsController < ApplicationController
     @user = current_user
     @salon = Salon.find(params[:id])
     @services = @salon.services
+    @products = @salon.products
   end
 
   def create
