@@ -262,5 +262,14 @@
 }
 
 .open_chairs {
-  color: orange;
+  color: #D63232;
+}
+
+.mini-service-icon {
+  transition: color 0.5s ease;
+  color: #D63232;
+}
+
+.mini-service-icon:hover {
+  color: #CC0000;
 }
