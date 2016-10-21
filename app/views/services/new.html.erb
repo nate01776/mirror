@@ -13,6 +13,16 @@
           <%= q.text_field :description %>
         </div>
 
+        <div class="field login-field">
+          <%= q.label :price, "Price (optional)" %>
+          <%= q.text_field :price %>
+        </div>
+
+        <div class="field login-field">
+          <%= q.label :time, "Time (optional)" %>
+          <%= q.text_field :time %>
+        </div>
+
         <div class="field login-field drop-down" id="user-type">
           <%= q.label :service_type, "please enter number of chairs available" %>
           <%= q.select :service_type, @service_types %>
