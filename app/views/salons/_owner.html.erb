@@ -7,15 +7,18 @@
       <% @services.each do |service| %>
         <div class="row">
           <a href="/salons/<%= @salon.id %>/services/<%= service.id %>">
-            <div class="small-12 columns service-info">
-              <i class="<%= service.icon %>" aria-hidden="true"></i>
+            <div class="small-3 columns service-info">
+              <i class="<%= service.icon %> fa-2x" aria-hidden="true"></i>
+            </div>
+            <div class="small-9 columns service-info">
               <b><%= service.name %></b><br />
-              - <%= service.description %><br />
+              <%= service.description %><br />
             </div>
           </a>
         </div>
         <hr class="user-info-hr">
       <% end %>
+      <%= link_to 'add new service', new_salon_service_path(params[:id]), class:"button new-salon-button" %>
     </div>
   </div>
 
@@ -24,7 +27,7 @@
       <h1>stylists</h1>
     </div>
     <div class="row">
-      <h3>some data</h3>
+      <h3>list of stylists</h3>
     </div>
   </div>
 </div>
@@ -34,7 +37,7 @@
       <h1>products</h1>
     </div>
     <div class="row clients">
-      <h3>data</h3>
+      <h3>react(products)</h3>
     </div>
   </div>
 
@@ -43,7 +46,7 @@
       <h1>clients</h1>
     </div>
     <div class="row">
-      <h3>data</h3>
+      <h3>react (clients)</h3>
     </div>
   </div>
 </div>

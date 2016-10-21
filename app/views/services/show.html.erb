@@ -1,3 +1,20 @@
-<i class="<%= @service.icon %>" aria-hidden="true"></i>
-<%= @service.name %>
-<%= @service.description %>
+<div class="row">
+  <div class="small-12 large-12 large-centered medium-centered columns user-box">
+    <div class="row">
+      <h1><%=@service.salon.name %></h1>
+    </div>
+    <div class="row">
+      <div class="small-4 columns salon-pic">
+        <i class="<%= @service.icon %> fa-3x" aria-hidden="true"></i>
+      </div>
+        <div class="small-8 columns salon-info left-align-me">
+          <h3>
+            service:<br />
+            <b><%= @service.name %><br /><br /></b>
+            description:<br />
+            <b><%= @service.description %><br /><br /></b>
+          </h3>
+        </div>
+    </div>
+  </div>
+</div>

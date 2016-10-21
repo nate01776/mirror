@@ -257,6 +257,10 @@
 }
 
 .service-info {
-  text-align: left;
+  text-align: center;
   margin-left: 40px;
+}
+
+.open_chairs {
+  color: orange;
 }
