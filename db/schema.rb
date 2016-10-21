@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161021202240) do
+ActiveRecord::Schema.define(version: 20161021211431) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,11 +32,11 @@ ActiveRecord::Schema.define(version: 20161021202240) do
     t.string  "phone",                        null: false
     t.string  "email"
     t.string  "website"
-    t.integer "user_id",                      null: false
+    t.integer "owner_id",                     null: false
     t.string  "state",                        null: false
     t.string  "zip_code",                     null: false
     t.integer "open_chair_count", default: 0, null: false
-    t.index ["user_id"], name: "index_salons_on_user_id", using: :btree
+    t.index ["owner_id"], name: "index_salons_on_owner_id", using: :btree
   end
 
   create_table "salonusers", force: :cascade do |t|

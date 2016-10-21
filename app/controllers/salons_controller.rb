@@ -6,6 +6,7 @@ class SalonsController < ApplicationController
   def show
     @user = current_user
     @salon = Salon.find(params[:id])
+    #insert info to say that user who is owner can see this data
     @services = @salon.services
     @products = @salon.products
     @members = @salon.users

@@ -20,9 +20,12 @@ class Salon < ApplicationRecord
     end
   end
 
+  def owner
+    return User.find(owner_id)
+  end
+
   def find_stylists(array)
     output = []
-    binding.pry
     array.each do |user|
       if user.user_type == "stylist"
         output << user
