@@ -10,22 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161019213237) do
+ActiveRecord::Schema.define(version: 20161021172906) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "salons", force: :cascade do |t|
-    t.string  "name",     null: false
-    t.string  "address",  null: false
-    t.string  "city",     null: false
-    t.string  "phone",    null: false
+    t.string  "name",                         null: false
+    t.string  "address",                      null: false
+    t.string  "city",                         null: false
+    t.string  "phone",                        null: false
     t.string  "email"
     t.string  "website"
-    t.integer "user_id",  null: false
-    t.string  "state",    null: false
-    t.string  "zip_code", null: false
+    t.integer "user_id",                      null: false
+    t.string  "state",                        null: false
+    t.string  "zip_code",                     null: false
+    t.integer "open_chair_count", default: 0, null: false
     t.index ["user_id"], name: "index_salons_on_user_id", using: :btree
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string  "name",         null: false
+    t.text    "description",  null: false
+    t.string  "service_type"
+    t.integer "salon_id"
+    t.string  "price"
+    t.string  "time"
+    t.index ["salon_id"], name: "index_services_on_salon_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

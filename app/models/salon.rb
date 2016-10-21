@@ -1,5 +1,6 @@
 class Salon < ApplicationRecord
   belongs_to :user
+  has_many :services
 
   validates :name, presence: true
   validates :address, presence: true

@@ -3,6 +3,12 @@ class SalonsController < ApplicationController
     @salon = Salon.new
   end
 
+  def show
+    @user = current_user
+    @salon = Salon.find(params[:id])
+    @services = @salon.services
+  end
+
   def create
     @salon = Salon.new(salon_params)
     @salon.user = current_user
@@ -32,6 +38,6 @@ class SalonsController < ApplicationController
   private
 
   def salon_params
-    params.require(:salon).permit(:name, :address, :city, :state, :zip_code, :neighborhood, :phone, :email, :user)
+    params.require(:salon).permit(:name, :address, :city, :state, :zip_code, :neighborhood, :phone, :email, :user, :open_chair_count)
   end
 end

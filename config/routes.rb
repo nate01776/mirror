@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root "users#show"
+
   devise_for :users, path: 'auth', path_names:
     { sign_in: 'login',
       sign_out: 'logout',
@@ -8,8 +10,11 @@ Rails.application.routes.draw do
       registration: 'register',
       sign_up: 'cmon_let_me_in' }
 
-  root "users#show"
   resources :login, only: [:index]
+
   resources :users, only: [:show]
-  resources :salons, only: [:new, :create, :show, :edit, :update]
+
+  resources :salons, only: [:new, :create, :show, :edit, :update] do
+    resources :services, only: [:new, :create, :show]
+  end
 end

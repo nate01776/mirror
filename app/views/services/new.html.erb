@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="small-12 medium-8 large-8 large-centered medium-centered columns login-box">
+    <div class="row">
+      <h1>add new service</h1>
+    </div>
+    <div class="row">
+    <%= form_for [@salon, @service] do |q| %>
+      <div class="small-12 large-12 columns">
+        <div class="field login-field">
+          <%= q.label :name, "Name" %>
+          <%= q.text_field :name %>
+        </div>
+
+        <div class="field login-field">
+          <%= q.label :description, "Description" %>
+          <%= q.text_field :description %>
+        </div>
+
+        <div class="field login-field">
+          <%= q.label :price, "Price (optional)" %>
+          <%= q.text_field :price %>
+        </div>
+
+        <div class="field login-field">
+          <%= q.label :time, "Time (optional)" %>
+          <%= q.text_field :time %>
+        </div>
+
+        <div class="field login-field drop-down" id="user-type">
+          <%= q.label :service_type, "please enter number of chairs available", id:"service-type" %>
+          <%= q.select :service_type, @service_types %>
+        </div>
+
+        <div class="actions">
+          <a href="/" class="button login-page-button"><</a>
+          <input class="submit button new-salon-button"
+            name="commit"
+            type="submit"
+            value="add service" />
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
