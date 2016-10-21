@@ -23,7 +23,7 @@ describe 'Owner can add new service salon' do
 
       click_link salon.name
 
-      expect(page).to have_content
+      expect(page).to have_content(service.name)
     end
   end
 end

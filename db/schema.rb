@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161021164707) do
+ActiveRecord::Schema.define(version: 20161021172906) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 20161021164707) do
     t.text    "description",  null: false
     t.string  "service_type"
     t.integer "salon_id"
+    t.string  "price"
+    t.string  "time"
     t.index ["salon_id"], name: "index_services_on_salon_id", using: :btree
   end
 
