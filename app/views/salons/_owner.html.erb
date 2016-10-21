@@ -8,6 +8,7 @@
         <div class="row">
           <a href="/salons/<%= @salon.id %>/services/<%= service.id %>">
             <div class="small-12 columns service-info">
+              <i class="<%= service.icon %>" aria-hidden="true"></i>
               <b><%= service.name %></b><br />
               - <%= service.description %><br />
             </div>
