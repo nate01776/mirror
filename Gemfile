@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 #non-standard gems
 gem 'foundation-rails'
 gem 'devise'
+gem 'pry'
 #included gems
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'pg', '~> 0.18'
