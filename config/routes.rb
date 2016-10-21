@@ -16,5 +16,6 @@ Rails.application.routes.draw do
 
   resources :salons, only: [:new, :create, :show, :edit, :update] do
     resources :services, only: [:new, :create, :show]
+    resources :products, only: [:new, :create, :show]
   end
 end
