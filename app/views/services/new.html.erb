@@ -1,6 +1,9 @@
 <div class="row">
   <div class="small-12 medium-8 large-8 large-centered medium-centered columns login-box">
     <div class="row">
+      <h1>add new service</h1>
+    </div>
+    <div class="row">
     <%= form_for [@salon, @service] do |q| %>
       <div class="small-12 large-12 columns">
         <div class="field login-field">
@@ -24,7 +27,7 @@
         </div>
 
         <div class="field login-field drop-down" id="user-type">
-          <%= q.label :service_type, "please enter number of chairs available" %>
+          <%= q.label :service_type, "please enter number of chairs available", id:"service-type" %>
           <%= q.select :service_type, @service_types %>
         </div>
 

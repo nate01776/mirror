@@ -14,7 +14,15 @@ describe 'Owner can add new service salon' do
       click_button('log in')
     end
 
-    scenario 'should see their salons in the owner management console and click on them' do
+    scenario 'should see their salons services on the salon profile page' do
+      visit '/'
+
+      click_link salon.name
+
+      expect(page).to have_content(service.name)
+    end
+
+    scenario 'should see their salons in the owner management console and click on them, should see add new service link' do
       visit '/'
 
       expect(page).to have_content('owner management console')
@@ -24,6 +32,20 @@ describe 'Owner can add new service salon' do
       click_link salon.name
 
       expect(page).to have_content(service.name)
+      expect(page).to have_link('add new service')
+    end
+
+    scenario 'should be able to add a new service and be returned to salon profile page' do
+      visit '/'
+      click_link salon.name
+      click_link 'add new service'
+
+      fill_in 'Name', with: 'another test service'
+      fill_in 'Description', with: 'another test service description'
+      click_button 'add service'
+
+      expect(page).to have_content(salon.name)
+      expect(page).to have_content('another test service')
     end
   end
 end
