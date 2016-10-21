@@ -18,20 +18,25 @@
 
 <% if @user.user_type != "owner" %>
   <div class="row">
+    <% if @user.user_type == "client" %>
+    
+      <div class="small-12 large-3 columns user-box">
+        <%= render './users/client/client_salon_info' %>
+      </div>
+      <div class="small-12 large-8 columns user-box">
+        <%= render './users/client/client_details' %>
+      </div>
 
-    <div class="small-12 large-3 columns user-box">
-      <%= render 'user-info' %>
-    </div>
+    <% elsif @user.user_type == "stylist" %>
 
-    <div class="small-12 large-8 columns user-box">
-      <% if @user.user_type == "owner" %>
-        <%= render './users/owner/owner_management' %>
-      <% elsif @user.user_type == "stylist" %>
-        <%= render './users/stylist/stylist_management' %>
-      <% else %>
-        <%= render './users/client/client_management' %>
-      <% end %>
-    </div>
+      <div class="small-12 large-3 columns user-box">
+        <%= render './users/stylist/stylist_salon_info' %>
+      </div>
 
+      <div class="small-12 large-8 columns user-box">
+        <%= render './users/stylist/stylist_details' %>
+      </div>
+
+    <% end %>
   </div>
 <% end %>
