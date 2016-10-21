@@ -19,4 +19,23 @@ class Salon < ApplicationRecord
       errors.add(:owner, "must be the creator!")
     end
   end
+
+  def find_stylists(array)
+    output = []
+    binding.pry
+    array.each do |user|
+      if user.user_type == "stylist"
+        output << user
+      end
+    end
+  end
+
+  def find_clients(array)
+    output = []
+    array.each do |user|
+      if user.user_type == "client"
+        output << user
+      end
+    end
+  end
 end

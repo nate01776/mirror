@@ -8,6 +8,9 @@ class SalonsController < ApplicationController
     @salon = Salon.find(params[:id])
     @services = @salon.services
     @products = @salon.products
+    @members = @salon.users
+    @stylists = @salon.find_stylists(@members)
+    @clients = @salon.find_clients(@members)
   end
 
   def create
