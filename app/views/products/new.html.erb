@@ -4,7 +4,7 @@
       <h1>add new service</h1>
     </div>
     <div class="row">
-    <%= form_for [@salon, @service] do |q| %>
+    <%= form_for [@salon, @product] do |q| %>
       <div class="small-12 large-12 columns">
         <div class="field login-field">
           <%= q.label :name, "Name" %>
@@ -22,12 +22,12 @@
         </div>
 
         <div class="field login-field">
-          <%= q.label :time, "Time (optional)" %>
-          <%= q.text_field :time %>
+          <%= q.label :in_stock, "In Stock?" %>
+          <%= q.check_box :in_stock %>
         </div>
 
         <div class="field login-field drop-down" id="user-type">
-          <%= q.label :service_type, "please enter number of chairs available", id:"service-type" %>
+          <%= q.label :service_type, "please choose service type", id:"service-type" %>
           <%= q.select :service_type, @service_types %>
         </div>
 

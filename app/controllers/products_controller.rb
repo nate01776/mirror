@@ -12,7 +12,10 @@ class ProductsController < ApplicationController
 
   def create
     @salon = Salon.find(params[:salon_id])
-    @product = Product.new(service_params)
+    @product = Product.new(product_params)
+    if @product.in_stock == "1"
+      @product.instock = true
+    end
     @product.salon = @salon
     if @product.save
       redirect_to salon_path(@salon.id)

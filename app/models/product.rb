@@ -39,4 +39,8 @@ class Product < ApplicationRecord
       "fa fa-dot-circle-o"
     end
   end
+
+  def in_stock_icon
+    "fa fa-check-square-o"
+  end
 end

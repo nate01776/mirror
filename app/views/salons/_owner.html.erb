@@ -32,10 +32,15 @@
         <div class="small-9 columns service-info">
           <b><%= product.name %></b><br />
           <%= product.description %><br />
+          <% if product.in_stock %>
+            <i class="<%= product.in_stock_icon %>" aria-hidden="true"></i> in stock!<br />
+          <% end %>
         </div>
         </a>
+        <hr class="user-info-hr">
       <% end %>
     </div>
+    <%= link_to 'add new product', new_salon_product_path(params[:id]), class:"button new-salon-button" %>
   </div>
 </div>
 <div class="row large-centered salon-big-box">
