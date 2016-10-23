@@ -21,7 +21,7 @@ class Salon < ApplicationRecord
   end
 
   def owner
-    return User.find(owner_id)
+    User.find(owner_id)
   end
 
   def find_stylists(array)
