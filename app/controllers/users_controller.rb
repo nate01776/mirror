@@ -4,6 +4,14 @@ class UsersController < ApplicationController
     if @user != nil
       @status = @user.user_type
     end
+    if @status == "owner"
+      @owned_salons = []
+      Salon.all.each do |salon|
+        if salon.owner == @user
+          @owned_salons << salon
+        end
+      end
+    end
   end
 
   private

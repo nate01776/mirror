@@ -1,5 +1,5 @@
 class Salon < ApplicationRecord
-  belongs_to :user
+  belongs_to :owner
   has_many :services
   has_many :products
   has_many :salonusers
@@ -10,11 +10,11 @@ class Salon < ApplicationRecord
   validates :city, presence: true
   validates :phone, presence: true
   validates_format_of :email, with: /\A[\w]([^@\s,;]+)@(([\w-]+\.)+(com|edu|org|net|gov|mil|biz|info))\z/i, uniqueness: true
-  validates :user_id, presence: true
+  validates :owner_id, presence: true
   validate :belongs_to_owner
 
   def belongs_to_owner
-    creator = User.find(user_id)
+    creator = User.find(owner_id)
     if creator.user_type != "owner"
       errors.add(:owner, "must be the creator!")
     end
