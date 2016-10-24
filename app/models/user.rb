@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_many :salonusers
   has_many :salons, through: :salonusers
 
+  mount_uploader :image, ImageUploader
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -11,7 +13,6 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :username, presence: true, uniqueness: true
   validates_format_of :email, with: /\A[\w]([^@\s,;]+)@(([\w-]+\.)+(com|edu|org|net|gov|mil|biz|info))\z/i, uniqueness: true
-  validates :password, presence: true, length: { minimum: 6 }
 
   def is_owner?
     user_type == "owner"

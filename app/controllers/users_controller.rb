@@ -14,6 +14,20 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = current_user
+    @image = @user.image
+  end
+
+  def update
+    @user = current_user
+    @user.image = params[:user][:image]
+    @user.save!
+    # @uploader.store!(params[:image])
+    # @image = @user.store!(image_params)
+    redirect_to root_path
+  end
+
   private
 
   def user_params
