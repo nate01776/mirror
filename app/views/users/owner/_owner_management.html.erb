@@ -2,9 +2,16 @@
   <h1>owner management console</h1>
 </div>
   <% @owned_salons.each do |salon| %>
-    <div class="row">
+    <div class="row" style="background:
+      linear-gradient(
+        rgba(255, 255, 255, 0.8),
+        rgba(255, 255, 255, 0.8)),
+        <% if salon.image.url != nil %>
+          url(<%= salon.image %>);
+        <% end %>
+      background-size: cover;
+      background-position: center;">
       <div class="small-6 columns salon-pic">
-        <p>image info here</p>
         <% if salon.open_chair_count != 0 %>
           <hr class="user-info-hr">
           <i class="fa fa-external-link open_chairs" aria-hidden="true"></i> <%= salon.open_chair_count %> chairs available<br /><br />

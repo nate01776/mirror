@@ -35,11 +35,13 @@ class SalonsController < ApplicationController
     if @user.id != @salon.owner_id
       redirect_to root_path
     end
+    @image = @salon.image
   end
 
   def update
     @salon = Salon.find(params[:id])
     @salon.update_attributes(salon_params)
+    @salon.image = params[:salon][:image]
     if @salon.save
       redirect_to root_path
     else

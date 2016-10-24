@@ -1,5 +1,5 @@
 <div class="row">
-<%= form_for(@salon) do |q| %>
+<%= form_for @salon, html: { multipart: true } do |q| %>
   <div class="small-12 large-6 columns">
     <div class="field login-field">
       <%= q.label :name, "Name" %>
@@ -43,6 +43,11 @@
       <%= q.text_field :open_chair_count %>
     </div>
 
+    <div class="field">
+      <%= q.label :image %><br>
+      <%= q.file_field :image, id:"upload-here"%>
+    </div>
+
     <!-- <div class="field login-field">
       <%= q.label :image %>
       <%= q.file_field :image, id:"upload-here"%>
@@ -53,7 +58,8 @@
       <input class="submit button new-salon-button"
         name="commit"
         type="submit"
-        value="update location" />
+        value="update location"
+        id='uploader-button'/>
     </div>
   </div>
 <% end %>

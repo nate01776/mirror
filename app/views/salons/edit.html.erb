@@ -4,6 +4,9 @@
       <h1>edit <%=@salon.name %></h1>
     </div>
     <div class="row">
+      <% if @salon.image.url != nil %>
+        <%= image_tag @image, id:"upload-image" %>
+      <% end %>
       <%= render 'edit_form' %>
     </div>
   </div>
