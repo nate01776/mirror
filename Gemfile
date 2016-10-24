@@ -8,6 +8,7 @@ gem 'coveralls', require: false
 gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
 gem 'fog'
 gem 'figaro'
+gem 'launchy'
 #included gems
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'pg', '~> 0.18'

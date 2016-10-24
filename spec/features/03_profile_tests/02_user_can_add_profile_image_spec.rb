@@ -15,18 +15,23 @@ describe ImageUploader do
       click_button('log in')
     end
 
-
-    it 'User can see upload link if not added file' do
+    scenario 'User can see upload link if not added file' do
       expect(page).to have_link('add user image')
       click_link('add user image')
       expect(page).to have_button('Update User')
     end
 
-    it 'User can upload file' do
+    scenario 'User can upload file, displayed behind user info' do
       click_link('add user image')
       attach_file('upload-here', './spec/images/doge.jpg')
       click_button('Update User')
       expect(page).to have_content('client management')
-      expect(page).to have_xpath("//img[contains(@src,'doge.jpg')]")
+      expect(find_by_id('user-profile-info')[:style]).to have_content('doge.jpg')
+    end
+
+    scenario 'User clicks "update user", but doesnt add file and is returned to their root' do
+      click_link('add user image')
+      click_button('Update User')
+      expect(page).to have_content('client management')
     end
 end
