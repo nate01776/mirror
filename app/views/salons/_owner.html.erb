@@ -61,7 +61,7 @@
     </div>
     <div class="row">
       <% @clients.each do |client| %>
-        <h3><%= client.full_name %></h3>
+        <%= link_to client.full_name, user_profile_path(@user.id, client.id), class:"button new-salon-button" %>
       <% end %>
     </div>
   </div>

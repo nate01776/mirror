@@ -5,7 +5,7 @@ FactoryGirl.define do
     sequence(:email) { |n| "user_email#{n}@gmail.com" }
     sequence(:username) { |n| "user#{n}" }
     password "tester_password"
-    sequence(:first_name)
-    sequence(:last_name)
+    sequence(:first_name) { |n| "name#{n}"}
+    sequence(:last_name) { |n| "last#{n}"}
   end
 end

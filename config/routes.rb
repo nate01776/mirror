@@ -12,7 +12,9 @@ Rails.application.routes.draw do
 
   resources :login, only: [:index]
 
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    resources :profile, only: [:show]
+  end
 
   resources :salons, only: [:new, :create, :show, :edit, :update] do
     resources :services, only: [:new, :create, :show]

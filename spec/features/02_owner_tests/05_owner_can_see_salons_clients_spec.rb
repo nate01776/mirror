@@ -33,5 +33,17 @@ describe 'Owner can add new service salon' do
 
       expect(page).to have_content(user_stylist.full_name)
     end
+
+    scenario 'should be able to click name to see profile page' do
+      visit '/'
+
+      click_link salon.name
+
+      expect(page).to have_link(user_stylist.full_name)
+
+      click_link user_stylist.full_name
+
+      expect(page).to have_content('#{user_stylist.full_name} profile')
+    end
   end
 end
