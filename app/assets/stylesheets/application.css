@@ -282,3 +282,11 @@
   padding: 10px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
 }
+
+.user-edit-box {
+  text-align: center;
+}
+
+.user-image {
+  width: 20%;
+}

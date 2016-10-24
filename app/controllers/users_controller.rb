@@ -22,11 +22,17 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
-    @user.image = params[:user][:image]
-    @user.save!
-    # @uploader.store!(params[:image])
-    # @image = @user.store!(image_params)
-    redirect_to root_path
+    if params[:user] == nil
+      redirect_to root_path
+    else
+      @user.image = params[:user][:image]
+      if @user.save
+        redirect_to root_path
+        flash[:notice] = "Salon added successfully"
+      else
+        render :new
+      end
+    end
   end
 
   private
