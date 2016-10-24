@@ -8,11 +8,14 @@ class SalonsController < ApplicationController
     @salon = Salon.find(params[:id])
     @services = @salon.services
     @products = @salon.products
+    @members = @salon.users
+    @stylists = @salon.find_stylists(@members)
+    @clients = @salon.find_clients(@members)
   end
 
   def create
     @salon = Salon.new(salon_params)
-    @salon.user = current_user
+    @salon.owner_id = current_user.id
     if @salon.save
       redirect_to root_path
       flash[:notice] = "Salon added successfully"
@@ -39,6 +42,6 @@ class SalonsController < ApplicationController
   private
 
   def salon_params
-    params.require(:salon).permit(:name, :address, :city, :state, :zip_code, :neighborhood, :phone, :email, :user, :open_chair_count)
+    params.require(:salon).permit(:name, :address, :city, :state, :zip_code, :neighborhood, :phone, :email, :owner, :open_chair_count)
   end
 end

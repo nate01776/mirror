@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Owner can update salon' do
   feature 'should see owner management console' do
     let!(:user_owner) { create(:user, user_type: 'owner') }
-    let!(:salon) { create(:salon, user: user_owner) }
+    let!(:salon) { create(:salon, owner_id: user_owner.id) }
 
     before :each do
       visit '/'

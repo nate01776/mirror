@@ -49,7 +49,9 @@
       <h1>stylists</h1>
     </div>
     <div class="row clients">
-      <h3>react(stylists)</h3>
+      <% @stylists.each do |stylist| %>
+        <h3><%= stylist.first_name %> <%= stylist.last_name %></h3>
+      <% end %>
     </div>
   </div>
 
@@ -58,7 +60,9 @@
       <h1>clients</h1>
     </div>
     <div class="row">
-      <h3>react (clients)</h3>
+      <% @clients.each do |stylist| %>
+        <h3><%= stylist.first_name %> <%= stylist.last_name %></h3>
+      <% end %>
     </div>
   </div>
 </div>
