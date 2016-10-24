@@ -2,7 +2,7 @@
   <div class="new_user new_review">
   <div class="field">
     <%= f.label :image %><br>
-    <%= f.file_field :image, id:"upload-here"%>
+    <%= f.file_field :image, :id => "upload-here"%>
   </div>
   <div class="actions">
     <%= f.submit 'Update User', :id => 'uploader-button'%>
