@@ -11,6 +11,10 @@ class SalonsController < ApplicationController
     @members = @salon.users
     @stylists = @salon.find_stylists(@members)
     @clients = @salon.find_clients(@members)
+    @is_owner = false
+    if @user.id == @salon.owner_id
+      @is_owner = true
+    end
   end
 
   def create
@@ -27,6 +31,10 @@ class SalonsController < ApplicationController
 
   def edit
     @salon = Salon.find(params[:id])
+    @user = current_user
+    if @user.id != @salon.owner_id
+      redirect_to root_path
+    end
   end
 
   def update

@@ -1,3 +1,18 @@
-<%= @signed_in_user.full_name %>
-<h3>viewing profile of</h3>
-<%= @user_profile.full_name %>
+<div class="row large-centered salon-big-box">
+  <div class="small-12 large-12 columns salon-box">
+    <div class="row">
+      <h1><%= @user_profile.full_name %> user profile</h1>
+    </div>
+    <div class="row">
+      <div class="small-12 large-6 columns salon-box">
+        <h3>Follows:</h3>
+        <% @user_profile.salons.each do |salon| %>
+          <%= link_to salon.name, salon_path(salon.id) %><br />
+        <% end %>
+      </div>
+      <div class="small-12 large-6 columns salon-box">
+        <%= @user_profile.username %><br />
+        <%= @user_profile.email %>
+      </div>
+    </div>
+  </div>

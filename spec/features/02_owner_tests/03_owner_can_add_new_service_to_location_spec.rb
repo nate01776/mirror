@@ -3,8 +3,10 @@ require 'rails_helper'
 describe 'Owner can add new service salon' do
   feature 'should be added from salon page' do
     let!(:user_owner) { create(:user, user_type: 'owner') }
+    let!(:user_owner_2) {create(:user, user_type: 'owner') }
     let!(:user_client) { create(:user, user_type: 'client') }
     let!(:salon) { create(:salon, owner_id: user_owner.id) }
+    let!(:salon_2) { create(:salon, owner_id: user_owner_2.id) }
     let!(:service) { create(:service, salon_id: salon.id) }
 
     before :each do

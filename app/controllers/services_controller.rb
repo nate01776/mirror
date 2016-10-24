@@ -6,12 +6,20 @@ class ServicesController < ApplicationController
 
   def new
     @salon = Salon.find(params[:salon_id])
+    @user = current_user
+    if @user.id != @salon.owner_id
+      redirect_to root_path
+    end
     @service = Service.new
     @service_types = Service::SERVICE_TYPES
   end
 
   def create
     @salon = Salon.find(params[:salon_id])
+    @user = current_user
+    if @user.id != @salon.owner_id
+      redirect_to root_path
+    end
     @service = Service.new(service_params)
     @service.salon = @salon
     if @service.save

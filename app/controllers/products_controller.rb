@@ -6,12 +6,20 @@ class ProductsController < ApplicationController
 
   def new
     @salon = Salon.find(params[:salon_id])
+    @user = current_user
+    if @user.id != @salon.owner_id
+      redirect_to root_path
+    end
     @product = Product.new
     @service_types = Product::SERVICE_TYPES
   end
 
   def create
     @salon = Salon.find(params[:salon_id])
+    @user = current_user
+    if @user.id != @salon.owner_id
+      redirect_to root_path
+    end
     @product = Product.new(product_params)
     if @product.in_stock == "1"
       @product.instock = true

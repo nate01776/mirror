@@ -21,7 +21,7 @@
   </div>
 </div>
 
-<% if @user.user_type == "owner" %>
+<% if @user.user_type == "owner" && @is_owner %>
   <%= render 'owner' %>
 <% elsif @user.user_type == "stylist" %>
   <%= render 'stylist' %>
