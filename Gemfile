@@ -17,7 +17,6 @@ gem 'jbuilder', '~> 2.5'
 
 group :test do
   gem 'database_cleaner'
-  gem 'coveralls', require: false
 end
 
 group :development, :test do
