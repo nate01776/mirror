@@ -10,7 +10,7 @@
   </div>
   <hr class="user-info-hr">
   <div class="add-white-backer">
-    <% if @user.image == nil %>
+    <% if @image.url == nil %>
       <%= link_to 'add user image', edit_user_path(current_user.id) %>
     <% else %>
       <%= link_to 'edit user image', edit_user_path(current_user.id) %>

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = current_user
+    @image = @user.image
     if @user != nil
       @status = @user.user_type
     end
