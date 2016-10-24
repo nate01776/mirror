@@ -31,6 +31,7 @@ class Salon < ApplicationRecord
         output << user
       end
     end
+    return output
   end
 
   def find_clients(array)
@@ -40,5 +41,6 @@ class Salon < ApplicationRecord
         output << user
       end
     end
+    return output
   end
 end
