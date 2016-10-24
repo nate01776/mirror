@@ -50,7 +50,7 @@
     </div>
     <div class="row clients">
       <% @stylists.each do |stylist| %>
-        <h3><%= stylist.first_name %> <%= stylist.last_name %></h3>
+        <h3><%= stylist.full_name %></h3>
       <% end %>
     </div>
   </div>
@@ -60,8 +60,8 @@
       <h1>clients</h1>
     </div>
     <div class="row">
-      <% @clients.each do |stylist| %>
-        <h3><%= stylist.first_name %> <%= stylist.last_name %></h3>
+      <% @clients.each do |client| %>
+        <%= link_to client.full_name, user_profile_path(@user.id, client.id), class:"button new-salon-button" %>
       <% end %>
     </div>
   </div>

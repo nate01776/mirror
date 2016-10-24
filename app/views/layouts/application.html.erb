@@ -22,7 +22,7 @@
               <%= link_to 'X', destroy_user_session_path, method: :delete, class:"button new-salon-button", id:'sign-out' %>
             </div>
             <div class="small-6 columns">
-              <span class="current-user-name "><p><b>signed in as:</b> <%= current_user.username %></p></span>
+              <span class="current-user-name "><p><b>signed in as:</b> <%= current_user.full_name %></p></span>
             </div>
             <% end %>
           </span>

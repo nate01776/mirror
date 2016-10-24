@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'foundation-rails'
 gem 'devise'
 gem 'pry'
+gem 'coveralls', require: false
 #included gems
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'pg', '~> 0.18'
