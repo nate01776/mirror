@@ -1,8 +1,7 @@
 #BADGES
 ![Build Status](https://codeship.com/projects/e2a7eab0-76c2-0134-3d00-422e6d119acf/status?branch=master)
-![Coverage Status](https://coveralls.io/repos/nate01776/mirror/badge.png)
+[![Coverage Status](https://coveralls.io/repos/github/nate01776/mirror/badge.svg?branch=master)](https://coveralls.io/github/nate01776/mirror?branch=master)
 [![Code Climate](https://codeclimate.com/github/nate01776/mirror/badges/gpa.svg)](https://codeclimate.com/github/nate01776/mirror)
-[![Test Coverage](https://codeclimate.com/github/nate01776/mirror/badges/coverage.svg)](https://codeclimate.com/github/nate01776/mirror/coverage)
 [![Issue Count](https://codeclimate.com/github/nate01776/mirror/badges/issue_count.svg)](https://codeclimate.com/github/nate01776/mirror)
 
 # README
