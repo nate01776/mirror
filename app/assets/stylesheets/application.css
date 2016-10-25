@@ -290,3 +290,11 @@
 .user-image {
   width: 20%;
 }
+
+.mini-profile {
+  margin: 10px;
+}
+
+.user-profiles {
+  list-style: none;
+}

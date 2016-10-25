@@ -49,9 +49,25 @@
       <h1>stylists</h1>
     </div>
     <div class="row clients">
-      <% @stylists.each do |stylist| %>
-        <h3><%= stylist.full_name %></h3>
-      <% end %>
+      <ul class="user-profiles">
+        <% @stylists.each do |stylist| %>
+        <li>
+          <div
+          class="large-3 columns left mini-profile"
+          style="background:
+          linear-gradient(
+            rgba(255, 255, 255, 0.5),
+            rgba(255, 255, 255, 0.5)),
+          url(<%= stylist.image %>);
+          background-size: cover;
+          background-position: center;" >
+            <b><%= stylist.full_name %></b>
+            <%= stylist.username %><br /><br />
+            <%= link_to 'profile', user_profile_path(@user.id, stylist.id), class:"button new-salon-button" %>
+          </div>
+        </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 
@@ -60,9 +76,25 @@
       <h1>clients</h1>
     </div>
     <div class="row">
-      <% @clients.each do |client| %>
-        <%= link_to client.full_name, user_profile_path(@user.id, client.id), class:"button new-salon-button" %>
-      <% end %>
+      <ul class="user-profiles">
+        <% @clients.each do |client| %>
+        <li>
+          <div
+          class="large-3 columns left mini-profile"
+          style="background:
+          linear-gradient(
+            rgba(255, 255, 255, 0.5),
+            rgba(255, 255, 255, 0.5)),
+          url(<%= client.image %>);
+          background-size: cover;
+          background-position: center;" >
+            <b><%= client.full_name %></b>
+            <%= client.username %><br /><br />
+            <%= link_to 'profile', user_profile_path(@user.id, client.id), class:"button new-salon-button" %>
+          </div>
+        </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>
