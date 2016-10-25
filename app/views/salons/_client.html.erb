@@ -1,5 +1,5 @@
 <div class="row large-centered salon-big-box">
-  <div class="small-12 large-6 columns salon-box">
+  <div class="small-12 large-4 columns salon-box">
     <div class="row">
       <h1>services</h1>
     </div>
@@ -23,19 +23,7 @@
     </div>
   </div>
 
-  <div class="small-12 large-6 columns salon-box">
-    <div class="row">
-      <h1>stylists</h1>
-    </div>
-    <div class="row">
-      <% @stylists.each do |stylist| %>
-        <h3><%= stylist.full_name %></h3>
-      <% end %>
-    </div>
-  </div>
-</div>
-<div class="row large-centered salon-big-box">
-  <div class="small-12 large-12 columns salon-box">
+  <div class="small-12 large-4 columns salon-box">
     <div class="row">
       <h1>products</h1>
     </div>
@@ -51,6 +39,17 @@
         </div>
         </a>
         <hr class="user-info-hr">
+      <% end %>
+    </div>
+  </div>
+
+  <div class="small-12 large-4 columns salon-box">
+    <div class="row">
+      <h1>stylists</h1>
+    </div>
+    <div class="row">
+      <% @stylists.each do |stylist| %>
+        <h3><%= stylist.full_name %></h3>
       <% end %>
     </div>
   </div>
