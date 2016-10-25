@@ -35,7 +35,7 @@ describe 'Owner can add new service salon' do
       expect(page).to have_link('add new product')
     end
 
-    scenario 'should be able to add a new service and be returned to salon profile page' do
+    scenario 'should be able to add a new product and be returned to salon profile page' do
       visit '/'
       click_link salon.name
       click_link 'add new product'
@@ -46,6 +46,16 @@ describe 'Owner can add new service salon' do
 
       expect(page).to have_content(salon.name)
       expect(page).to have_content('another test product')
+    end
+
+    scenario 'should be able to view a product profile page' do
+      visit '/'
+      click_link salon.name
+      click_link product.name
+
+      expect(page).to have_content(product.name)
+      expect(page).to have_content(product.description)
+      expect(page).to have_content(product.price)
     end
   end
 end

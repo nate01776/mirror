@@ -70,7 +70,8 @@
           <br />
           <i class="<%= product.icon %> fa-2x" aria-hidden="true"></i><br />
           <%= link_to product.name, salon_product_path(@salon.id, product.id) %><br />
-          $<%= product.price %>
+          $<%= product.price %><br /><br />
+          <%= product.description %>
         </div>
       </li>
       <% end %>
