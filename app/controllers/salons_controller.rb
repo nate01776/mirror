@@ -41,7 +41,9 @@ class SalonsController < ApplicationController
   def update
     @salon = Salon.find(params[:id])
     @salon.update_attributes(salon_params)
-    @salon.image = params[:salon][:image]
+    if params[:salon][:image] != nil
+      @salon.image = params[:salon][:image]
+    end
     if @salon.save
       redirect_to root_path
     else
