@@ -7,7 +7,6 @@ describe 'User opens profile page by default' do
     let!(:salon) { create(:salon, owner_id: user_owner.id) }
 
     before :each do
-      salon.users << user_client
       visit '/'
       click_link 'log in'
       fill_in 'email', with: user_client.email
@@ -16,6 +15,7 @@ describe 'User opens profile page by default' do
     end
 
     scenario 'should see user profile info' do
+      salon.users << user_client
       visit '/'
       expect(page).to have_content('user info')
       expect(page).to have_content(user_client.username)
@@ -24,6 +24,7 @@ describe 'User opens profile page by default' do
     end
 
     scenario 'should see salon profile info' do
+      salon.users << user_client
       visit '/'
       expect(page).to have_content('recent salon info')
       expect(page).to have_content(salon.name)
@@ -31,6 +32,11 @@ describe 'User opens profile page by default' do
       expect(page).to have_content(salon.city)
       expect(page).to have_link('see all my salons')
       expect(page).to have_link('search for new salons')
+    end
+
+    scenario 'should see message if no salons added' do
+      visit '/'
+      expect(page).to have_content('No salons added yet!')
     end
   end
 end
