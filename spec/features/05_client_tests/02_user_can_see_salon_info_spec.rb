@@ -14,7 +14,9 @@ describe 'User opens profile page by default' do
     before :each do
       salon.users << user_client
       salon_2.users << user_client
-      salon.users << user_stylist
+      salon_2.users << user_stylist
+      salon_2.services << service
+      salon_2.products << product
       visit '/'
       click_link 'log in'
       fill_in 'email', with: user_client.email
@@ -51,7 +53,7 @@ describe 'User opens profile page by default' do
     scenario 'user should see salons stylists' do
       visit '/'
       click_link salon_2.name
-      expect(page).to have_content(stylist.name)
+      expect(page).to have_content(user_stylist.full_name)
     end
 
     scenario 'user should see salons products' do
@@ -59,7 +61,6 @@ describe 'User opens profile page by default' do
       click_link salon_2.name
       expect(page).to have_content(product.name)
       expect(page).to have_content(product.price)
-      expect(page).to have_content(product.time)
       expect(page).to have_content(product.description)
     end
   end
