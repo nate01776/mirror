@@ -10,6 +10,9 @@
       <h3><%= @user.recent_salon.address %><br /></h3>
       <h3><%= @user.recent_salon.city %>, <%= @user.recent_salon.state %><br /></h3>
     </div>
+    <% @user.recent_salon.services.each do |service| %>
+      <i class="<%= service.icon %> mini-service-icon" aria-hidden="true"></i>
+    <% end %>
     </a>
     <hr class="user-info-hr">
   </div>
