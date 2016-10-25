@@ -1,11 +1,28 @@
 <div class="row">
   <h1>recent salon info</h1>
 </div>
-<div class="row">
-  <hr class="user-info-hr">
-  <div class="user-info">
-      <h3><b><%= @user.salons.first.name %></b></h3>
-      <h3><%= @user.salons.first.address %><br /></h3>
+<% if @user.salons != [] %>
+  <div class="row">
+    <hr class="user-info-hr">
+    <a href="/salons/<%= @user.recent_salon.id %>">
+    <div class="user-info">
+      <h3><b><%= @user.recent_salon.name %></b></h3>
+      <h3><%= @user.recent_salon.address %><br /></h3>
+      <h3><%= @user.recent_salon.city %><br /></h3>
+    </div>
+    </a>
+    <hr class="user-info-hr">
   </div>
-  <hr class="user-info-hr">
+<% else %>
+  <div class="row">
+    <hr class="user-info-hr">
+    <div class="user-info">
+      <h3><b>No salons added yet!<br/>Search for one below</b></h3>
+    </div>
+    <hr class="user-info-hr">
+  </div>
+<% end %>
+<div class="row">
+  <%= link_to 'see all my salons', root_path, class:"button new-salon-button" %>
+  <%= link_to 'search for new salons', root_path, class:"button new-salon-button" %>
 </div>
