@@ -41,7 +41,7 @@ class SalonsController < ApplicationController
   def update
     @salon = Salon.find(params[:id])
     @salon.update_attributes(salon_params)
-    if params[:salon][:image] != nil
+    if !params[:salon][:image].nil?
       @salon.image = params[:salon][:image]
     end
     if @salon.save

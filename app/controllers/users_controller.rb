@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
-    if params[:user] == nil
+    if params[:user].nil?
       redirect_to root_path
     else
       @user.image = params[:user][:image]
