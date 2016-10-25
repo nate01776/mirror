@@ -3,7 +3,6 @@ require 'rails_helper'
 describe ImageUploader do
   include CarrierWave::Test::Matchers
   feature 'user should be able to add and edit profile image' do
-
     let!(:user_owner) { create(:user, user_type: 'owner') }
     let!(:salon) { create(:salon, owner_id: user_owner.id) }
     let(:uploader) { ImageUploader.new(user, :image) }
