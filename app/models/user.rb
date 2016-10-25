@@ -27,7 +27,7 @@ class User < ApplicationRecord
   end
 
   def recent_salon
-    self.salons.last
+    salons.last
   end
 
   def default_image

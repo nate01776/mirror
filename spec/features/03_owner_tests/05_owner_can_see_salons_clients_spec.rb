@@ -39,7 +39,7 @@ describe 'Owner can add new service salon' do
 
       click_link salon.name
 
-      click_link (user_client.full_name)
+      click_link user_client.full_name
 
       expect(page).to have_content(user_client.full_name + ' user profile')
       expect(page).to have_content(user_client.email)
