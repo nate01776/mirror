@@ -19,3 +19,6 @@
 # Non standard additions
 /coverage
 .env.rb
+
+# Ignore application configuration
+/config/application.yml

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = current_user
+    @image = @user.image
     if @user != nil
       @status = @user.user_type
     end
@@ -10,6 +11,26 @@ class UsersController < ApplicationController
         if salon.owner == @user
           @owned_salons << salon
         end
+      end
+    end
+  end
+
+  def edit
+    @user = current_user
+    @image = @user.image
+  end
+
+  def update
+    @user = current_user
+    if params[:user].nil?
+      redirect_to root_path
+    else
+      @user.image = params[:user][:image]
+      if @user.save
+        redirect_to root_path
+        flash[:notice] = "Salon added successfully"
+      else
+        render :new
       end
     end
   end

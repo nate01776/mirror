@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :login, only: [:index]
 
-  resources :users, only: [:show] do
+  resources :users, only: [:show, :edit, :update] do
     resources :profile, only: [:show]
   end
 

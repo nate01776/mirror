@@ -13,6 +13,8 @@ class Salon < ApplicationRecord
   validates :owner_id, presence: true
   validate :belongs_to_owner
 
+  mount_uploader :image, ImageUploader
+
   def belongs_to_owner
     creator = User.find(owner_id)
     if creator.user_type != "owner"

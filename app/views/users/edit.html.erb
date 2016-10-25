@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="small-12 large-10 large-centered columns user-box">
+    <div class="row">
+      <h1><%= @user.email %></h1>
+    </div>
+    <% if @user.image.url != nil %>
+      <div class="user-image">
+        <%= image_tag @image, id:"upload-image" %>
+      </div>
+    <% end %>
+    <%= render 'add_image_form' %>
+    <br>
+  </div>
+</div>

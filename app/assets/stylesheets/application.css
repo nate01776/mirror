@@ -220,6 +220,7 @@
 .user-info-hr {
   margin-left: 40px;
   margin-right: 40px;
+  border-color: #aab6b9;
 }
 
 .salon-info {
@@ -272,4 +273,20 @@
 
 .mini-service-icon:hover {
   color: #CC0000;
+}
+
+.add-white-backer {
+  background: white;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.user-edit-box {
+  text-align: center;
+}
+
+.user-image {
+  width: 20%;
 }

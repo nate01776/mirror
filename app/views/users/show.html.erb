@@ -1,6 +1,14 @@
 <div class="row">
 
-  <div class="small-12 large-3 columns user-box">
+  <div class="small-12 large-3 columns user-box"
+    id="user-profile-info"
+    style="background:
+    linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)),
+    url(<%= @user.image %>);
+    background-size: cover;
+    background-position: center;" >
     <%= render 'user-info' %>
   </div>
 
@@ -19,7 +27,7 @@
 <% if @user.user_type != "owner" %>
   <div class="row">
     <% if @user.user_type == "client" %>
-    
+
       <div class="small-12 large-3 columns user-box">
         <%= render './users/client/client_salon_info' %>
       </div>
