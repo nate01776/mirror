@@ -88,9 +88,8 @@
           url(<%= client.image %>);
           background-size: cover;
           background-position: center;" >
-            <b><%= client.full_name %></b>
-            <%= client.username %><br /><br />
-            <%= link_to 'profile', user_profile_path(@user.id, client.id), class:"button new-salon-button" %>
+            <br />
+            <%= link_to client.full_name, user_profile_path(@user.id, client.id), class:"button new-salon-button", id:"user-profile-link-#{client.id}" %>
           </div>
         </li>
         <% end %>
