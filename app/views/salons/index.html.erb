@@ -1,0 +1,36 @@
+<div class="row small-12 large-6 large-centered salon-big-box">
+  <div class="small-12 large-12 columns salon-box">
+    <div class="row">
+      <h1><%= @user.full_name %>'s salons</h1>
+    </div>
+      <% @salons.each do |salon| %>
+        <div class="row"
+          id="salon-profile-<%=salon.id%>"
+          style="background:
+          linear-gradient(
+            rgba(255, 255, 255, 0.8),
+            rgba(255, 255, 255, 0.8)),
+            <% if salon.image.url != nil %>
+              url(<%= salon.image %>);
+            <% end %>
+          background-size: cover;
+          background-position: center;">
+          <a href="/salons/<%= salon.id %>">
+            <div class="small-6 columns salon-info">
+              <b><%= salon.name %></b><br />
+              <%= salon.address %>, <%= salon.city %> <%= salon.state %><br />
+              <%= salon.phone %><br />
+              <%= salon.email %><br />
+              </a>
+              <% salon.services.each do |service| %>
+                <i class="<%= service.icon %> mini-service-icon" aria-hidden="true"></i>
+              <% end %>
+              <br /><br />
+            </div>
+          </a>
+        </div>
+
+        <hr class="user-info-hr">
+      <% end %>
+  </div>
+</div>

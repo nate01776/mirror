@@ -29,6 +29,11 @@ class SalonsController < ApplicationController
     end
   end
 
+  def index
+    @user = current_user
+    @salons = @user.salons
+  end
+
   def edit
     @salon = Salon.find(params[:id])
     @user = current_user

@@ -8,7 +8,7 @@
     <div class="user-info">
       <h3><b><%= @user.recent_salon.name %></b></h3>
       <h3><%= @user.recent_salon.address %><br /></h3>
-      <h3><%= @user.recent_salon.city %><br /></h3>
+      <h3><%= @user.recent_salon.city %>, <%= @user.recent_salon.state %><br /></h3>
     </div>
     </a>
     <hr class="user-info-hr">
@@ -23,6 +23,6 @@
   </div>
 <% end %>
 <div class="row">
-  <%= link_to 'see all my salons', root_path, class:"button new-salon-button" %>
+  <%= link_to 'see all my salons', user_salons_path(@user.id), class:"button new-salon-button" %>
   <%= link_to 'search for new salons', root_path, class:"button new-salon-button" %>
 </div>

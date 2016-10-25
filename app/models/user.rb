@@ -27,6 +27,6 @@ class User < ApplicationRecord
   end
 
   def recent_salon
-    self.salons.first
+    self.salons.last
   end
 end
