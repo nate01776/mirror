@@ -61,9 +61,8 @@
           url(<%= stylist.image %>);
           background-size: cover;
           background-position: center;" >
-            <b><%= stylist.full_name %></b>
-            <%= stylist.username %><br /><br />
-            <%= link_to 'profile', user_profile_path(@user.id, stylist.id), class:"button new-salon-button" %>
+            <br />
+            <%= link_to stylist.full_name, user_profile_path(@user.id, stylist.id), class:"button new-salon-button" %>
           </div>
         </li>
         <% end %>
@@ -89,7 +88,7 @@
           background-size: cover;
           background-position: center;" >
             <br />
-            <%= link_to client.full_name, user_profile_path(@user.id, client.id), class:"button new-salon-button", id:"user-profile-link-#{client.id}" %>
+            <%= link_to client.full_name, user_profile_path(@user.id, client.id), class:"button new-salon-button" %>
           </div>
         </li>
         <% end %>
