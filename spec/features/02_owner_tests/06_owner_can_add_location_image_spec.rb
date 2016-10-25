@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe ImageUploader do
   include CarrierWave::Test::Matchers
-  feature 'user should be able to add and edit profile image'
+  feature 'user should be able to add and edit profile image' do
 
     let!(:user_owner) { create(:user, user_type: 'owner') }
     let!(:salon) { create(:salon, owner_id: user_owner.id) }
@@ -41,4 +41,5 @@ describe ImageUploader do
       expect(find_by_id('salon-profile-' + salon.id.to_s)[:style]).to have_content('pensive_pupper.jpg')
       expect(page).to have_content('owner management console')
     end
+  end
 end

@@ -2,8 +2,7 @@ require 'rails_helper'
 
 describe ImageUploader do
   include CarrierWave::Test::Matchers
-  feature 'user should be able to add and edit profile image'
-
+  feature 'user should be able to add and edit profile image' do
     let!(:user_client) { create(:user) }
     let(:uploader) { ImageUploader.new(user, :image) }
 
@@ -34,4 +33,5 @@ describe ImageUploader do
       click_button('Update User')
       expect(page).to have_content('client management')
     end
+  end
 end
