@@ -35,7 +35,7 @@ describe 'User opens profile page by default' do
 
     scenario 'should see message if no salons added' do
       visit '/'
-      expect(page).to have_content('No salons added yet!')
+      expect(page).to have_content('Looking for a new salon?')
     end
   end
 end

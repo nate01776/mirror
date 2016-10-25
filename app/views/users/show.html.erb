@@ -45,7 +45,16 @@
 
     <% elsif @user.user_type == "stylist" %>
 
-      <div class="small-12 large-3 columns user-box">
+      <div class="small-12 large-3 columns user-box"
+        style="background:
+        linear-gradient(
+          rgba(255, 255, 255, 0.8),
+          rgba(255, 255, 255, 0.8)),
+          <% if @user.salons != [] %>
+            url(<%= @user.recent_salon.image %>);
+          <% end %>
+        background-size: cover;
+        background-position: center;" >
         <%= render './users/stylist/stylist_salon_info' %>
       </div>
 
