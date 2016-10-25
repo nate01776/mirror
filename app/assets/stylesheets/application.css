@@ -298,3 +298,10 @@
 .user-profiles {
   list-style: none;
 }
+
+.mini-round-image {
+  border-radius: 50%;
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+}
