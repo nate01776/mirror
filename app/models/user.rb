@@ -25,4 +25,12 @@ class User < ApplicationRecord
   def full_name
     first_name + " " + last_name
   end
+
+  def recent_salon
+    salons.last
+  end
+
+  def default_image
+    "https://s3.amazonaws.com/mirrorimages/uploads/user/image/default/stock-photo-curly-blonde-hair-closeup-wavy-blond-hair-background-close-up-texture-of-permed-hair-hairstyle-197410298.jpg"
+  end
 end

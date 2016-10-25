@@ -49,9 +49,34 @@
       <h1>stylists</h1>
     </div>
     <div class="row clients">
-      <% @stylists.each do |stylist| %>
-        <h3><%= stylist.full_name %></h3>
-      <% end %>
+      <ul class="user-profiles">
+        <% @stylists.each do |stylist| %>
+        <li>
+          <div
+          class="large-3 columns left mini-profile"
+          style="background:
+          linear-gradient(
+            rgba(255, 255, 255, 0.5),
+            rgba(255, 255, 255, 0.5)),
+          <% if stylist.image.url != nil %>
+            url(<%= stylist.image %>);
+          <% else %>
+            url(<%= stylist.default_image %>);
+          <% end %>
+          background-size: cover;
+          background-position: center;" >
+            <br />
+            <% if stylist.image.url != nil %>
+              <%= image_tag stylist.image.url, class:"mini-round-image" %><br />
+            <% else %>
+              <%= image_tag stylist.default_image, class:"mini-round-image" %><br />
+            <% end %>
+            <br />
+            <%= link_to stylist.full_name, user_profile_path(@user.id, stylist.id), class:"button new-salon-button" %>
+          </div>
+        </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 
@@ -60,9 +85,34 @@
       <h1>clients</h1>
     </div>
     <div class="row">
-      <% @clients.each do |client| %>
-        <%= link_to client.full_name, user_profile_path(@user.id, client.id), class:"button new-salon-button" %>
-      <% end %>
+      <ul class="user-profiles">
+        <% @clients.each do |client| %>
+        <li>
+          <div
+          class="large-3 columns left mini-profile"
+          style="background:
+          linear-gradient(
+            rgba(255, 255, 255, 0.5),
+            rgba(255, 255, 255, 0.5)),
+          <% if client.image.url != nil %>
+            url(<%= client.image %>);
+          <% else %>
+            url(<%= client.default_image %>);
+          <% end %>
+          background-size: cover;
+          background-position: center;" >
+            <br />
+            <% if client.image.url != nil %>
+              <%= image_tag client.image.url, class:"mini-round-image" %><br />
+            <% else %>
+              <%= image_tag client.default_image, class:"mini-round-image" %><br />
+            <% end %>
+            <br />
+            <%= link_to client.full_name, user_profile_path(@user.id, client.id), class:"button new-salon-button" %>
+          </div>
+        </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>

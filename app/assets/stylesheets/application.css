@@ -290,3 +290,19 @@
 .user-image {
   width: 20%;
 }
+
+.mini-profile {
+  margin: 10px;
+}
+
+.user-profiles {
+  list-style: none;
+}
+
+.mini-round-image {
+  border: 1px solid white;
+  border-radius: 50%;
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+}

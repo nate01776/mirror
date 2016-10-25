@@ -1,29 +1,56 @@
 <div class="row large-centered salon-big-box">
-  <div class="small-12 large-6 columns salon-box">
+  <div class="small-12 large-4 columns salon-box">
     <div class="row">
       <h1>services</h1>
     </div>
     <div class="row clients">
-      <h3>data</h3>
+      <% @services.each do |service| %>
+        <div class="row">
+          <a href="/salons/<%= @salon.id %>/services/<%= service.id %>">
+            <div class="small-3 columns service-info">
+              <i class="<%= service.icon %> fa-2x" aria-hidden="true" id="service-icon-<%= service.id %>"></i>
+            </div>
+            <div class="small-9 columns service-info">
+              <b><%= service.name %></b> - $<%= service.price %> - est. time: <%= service.time %><br />
+              <%= service.description %><br />
+
+              <br />
+            </div>
+          </a>
+        </div>
+        <hr class="user-info-hr">
+      <% end %>
     </div>
   </div>
 
-  <div class="small-12 large-6 columns salon-box">
-    <div class="row">
-      <h1>stylists</h1>
-    </div>
-    <div class="row">
-      <h3>data</h3>
-    </div>
-  </div>
-</div>
-<div class="row large-centered salon-big-box">
-  <div class="small-12 large-12 columns salon-box">
+  <div class="small-12 large-4 columns salon-box">
     <div class="row">
       <h1>products</h1>
     </div>
     <div class="row">
-      <h3>data</h3>
+      <% @products.each do |product| %>
+        <a href="/salons/<%= @salon.id %>/products/<%= product.id %>">
+        <div class="small-9 columns service-info">
+          <b><%= product.name %></b> - $<%= product.price %><br />
+          <%= product.description %><br />
+          <% if product.in_stock %>
+            <i class="<%= product.in_stock_icon %>" aria-hidden="true"></i> in stock!<br />
+          <% end %>
+        </div>
+        </a>
+        <hr class="user-info-hr">
+      <% end %>
+    </div>
+  </div>
+
+  <div class="small-12 large-4 columns salon-box">
+    <div class="row">
+      <h1>stylists</h1>
+    </div>
+    <div class="row">
+      <% @stylists.each do |stylist| %>
+        <h3><%= stylist.full_name %></h3>
+      <% end %>
     </div>
   </div>
 </div>

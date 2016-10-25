@@ -5,7 +5,9 @@
     </div>
     <div class="row">
       <div class="small-4 columns salon-pic">
-        <p>image info here</p>
+        <% if @salon.image.url != nil %>
+          <%= image_tag @salon.image.url %>
+        <% end %>
       </div>
         <div class="small-8 columns salon-info">
           <h3>

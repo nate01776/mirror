@@ -4,7 +4,19 @@
       <h1>services</h1>
     </div>
     <div class="row clients">
-      <h3>data</h3>
+      <ul class="user-profiles">
+      <% @services.each do |service| %>
+      <li>
+        <div
+        class="large-3 columns left mini-profile" >
+          <br />
+          <i class="<%= service.icon %> fa-2x" aria-hidden="true"></i><br />
+          <%= link_to service.name, salon_service_path(@salon.id, service.id) %><br />
+          $<%= service.price %>
+        </div>
+      </li>
+      <% end %>
+    </ul>
     </div>
   </div>
 
@@ -13,7 +25,34 @@
       <h1>clients</h1>
     </div>
     <div class="row">
-      <h3>data</h3>
+      <ul class="user-profiles">
+        <% @clients.each do |client| %>
+        <li>
+          <div
+          class="large-3 columns left mini-profile"
+          style="background:
+          linear-gradient(
+            rgba(255, 255, 255, 0.5),
+            rgba(255, 255, 255, 0.5)),
+          <% if client.image.url != nil %>
+            url(<%= client.image %>);
+          <% else %>
+            url(<%= client.default_image %>);
+          <% end %>
+          background-size: cover;
+          background-position: center;" >
+            <br />
+            <% if client.image.url != nil %>
+              <%= image_tag client.image.url, class:"mini-round-image" %><br />
+            <% else %>
+              <%= image_tag client.default_image, class:"mini-round-image" %><br />
+            <% end %>
+            <br />
+            <%= link_to client.full_name, user_profile_path(@user.id, client.id), class:"button new-salon-button" %>
+          </div>
+        </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>
@@ -23,7 +62,20 @@
       <h1>products</h1>
     </div>
     <div class="row">
-      <h3>data</h3>
+      <ul class="user-profiles">
+      <% @products.each do |product| %>
+      <li>
+        <div
+        class="large-3 columns left mini-profile" >
+          <br />
+          <i class="<%= product.icon %> fa-2x" aria-hidden="true"></i><br />
+          <%= link_to product.name, salon_product_path(@salon.id, product.id) %><br />
+          $<%= product.price %><br /><br />
+          <%= product.description %>
+        </div>
+      </li>
+      <% end %>
+    </ul>
     </div>
   </div>
 </div>

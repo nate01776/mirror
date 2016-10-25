@@ -11,6 +11,9 @@
         <% end %>
       </div>
       <div class="small-12 large-6 columns salon-box">
+        <% if @user_profile.image.url != nil %>
+          <%= image_tag @user_profile.image.url, class:"image-actual" %>
+        <% end %>
         <%= @user_profile.username %><br />
         <%= @user_profile.email %>
       </div>

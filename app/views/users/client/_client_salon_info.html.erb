@@ -1,13 +1,31 @@
 <div class="row">
-  <h1>salon info</h1>
+  <h1>recent salon info</h1>
 </div>
-<div class="row">
+<% if @user.salons != [] %>
   <div class="row">
-    <h4>Add Image stuff here</h4>
+    <hr class="user-info-hr">
+    <a href="/salons/<%= @user.recent_salon.id %>">
+    <div class="user-info">
+      <h3><b><%= @user.recent_salon.name %></b></h3>
+      <h3><%= @user.recent_salon.address %><br /></h3>
+      <h3><%= @user.recent_salon.city %>, <%= @user.recent_salon.state %><br /></h3>
+    </div>
+    <% @user.recent_salon.services.each do |service| %>
+      <i class="<%= service.icon %> mini-service-icon" aria-hidden="true"></i>
+    <% end %>
+    </a>
+    <hr class="user-info-hr">
   </div>
-  <hr class="user-info-hr">
-  <div class="user-info">
-      <h4>salon info here</h4>
+<% else %>
+  <div class="row">
+    <hr class="user-info-hr">
+    <div class="user-info">
+      <h3><b>No salons added yet!<br/>Search for one below</b></h3>
+    </div>
+    <hr class="user-info-hr">
   </div>
-  <hr class="user-info-hr">
+<% end %>
+<div class="row">
+  <%= link_to 'see all my salons', user_salons_path(@user.id), class:"button new-salon-button" %>
+  <%= link_to 'search for new salons', root_path, class:"button new-salon-button" %>
 </div>
