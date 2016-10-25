@@ -10,7 +10,6 @@ describe 'User opens profile page by default' do
     let!(:service) { create(:service, salon_id: salon.id) }
     let!(:product) { create(:product, salon_id: salon.id) }
 
-
     before :each do
       salon.users << user_client
       salon_2.users << user_client
