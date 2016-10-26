@@ -7,7 +7,7 @@ class StylistserviceController < ApplicationController
   end
 
   def destroy
-    @service = Service.find(params[:id])
-    
+    @user = current_user
+    @user.services.delete(params[:id])
   end
 end

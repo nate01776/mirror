@@ -14,9 +14,9 @@
           <%= link_to service.name, salon_service_path(@salon.id, service.id) %><br />
           $<%= service.price %><br /><br />
           <% if @user_services.find_by(id: service.id).nil? %>
-            <%= link_to '+',  new_salon_stylistservice_path(@salon.id, service.id), class:"button new-salon-button" %>
+            <%= link_to '+',  new_salon_stylistservice_path(@salon.id, service.id), class:"button service-button add" %>
           <% else %>
-            <%= link_to 'x',  salon_stylistservice_path(@salon.id, service.id), method: :delete, class:"button new-salon-button" %>
+            <%= link_to 'x',  salon_stylistservice_path(@salon.id, service.id), method: :delete, class:"button service-button" %>
           <% end %>
         </div>
       </li>
@@ -71,7 +71,7 @@
       <% @products.each do |product| %>
       <li>
         <div
-        class="large-3 columns left mini-profile" >
+        class="large-2 columns left mini-profile" >
           <br />
           <i class="<%= product.icon %> fa-2x" aria-hidden="true"></i><br />
           <%= link_to product.name, salon_product_path(@salon.id, product.id) %><br />
