@@ -2,5 +2,36 @@
   <h1>services management</h1>
 </div>
 <div class="row">
-  <h4>calender</h4>
+  <ul class="user-profiles">
+  <% @client_services.each do |service| %>
+    <% appt = Stylistservice.find(service.stylistservice_id) %>
+    <% srv = Service.find(appt.service_id) %>
+    <li>
+      <div class="row">
+        <div
+        class="large-10 columns left mini-profile"
+        style="background:
+        linear-gradient(
+          rgba(255, 255, 255, 0.5),
+          rgba(255, 255, 255, 0.5)),
+        <% if User.find(service.user_id).image != nil %>
+          url(<%= User.find(service.user_id).image %>);
+        <% else %>
+          url(<%= @user.default_image %>);
+        <% end %>
+        background-size: cover;
+        background-position: center;
+        padding: 10px;" >
+          <% if User.find(service.user_id).image != nil %>
+            <%= image_tag User.find(service.user_id).image, class: "mini-round-image left" %>
+          <% end %>
+          <br />
+          <i class="<%= srv.icon %> fa-2x" aria-hidden="true"></i><br />
+          <b><%= User.find(service.user_id).full_name %></b><br />
+          <%= srv.name %><br />
+          <%= service.datetime %><br />
+        </div>
+        </div>
+        </li>
+  <% end %>
 </div>

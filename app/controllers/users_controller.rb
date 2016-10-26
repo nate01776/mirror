@@ -13,6 +13,14 @@ class UsersController < ApplicationController
         end
       end
     end
+    if @status == 'stylist'
+      @client_services = []
+      Clientservice.all.each do |service|
+        if Stylistservice.find(service.stylistservice_id).user_id == @user.id
+          @client_services << service
+        end
+      end
+    end
   end
 
   def edit
