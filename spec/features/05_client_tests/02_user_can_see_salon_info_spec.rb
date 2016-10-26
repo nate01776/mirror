@@ -46,7 +46,6 @@ describe 'User opens profile page by default' do
       expect(page).to have_content(service.name)
       expect(page).to have_content(service.price)
       expect(page).to have_content(service.time)
-      expect(page).to have_content(service.description)
     end
 
     scenario 'user should see salons stylists' do
@@ -60,7 +59,6 @@ describe 'User opens profile page by default' do
       click_link salon_2.name
       expect(page).to have_content(product.name)
       expect(page).to have_content(product.price)
-      expect(page).to have_content(product.description)
     end
   end
 end

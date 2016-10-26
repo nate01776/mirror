@@ -3,6 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :salonusers
   has_many :salons, through: :salonusers
+  has_many :stylistservices
+  has_many :services, through: :stylistservices
 
   mount_uploader :image, ImageUploader
 

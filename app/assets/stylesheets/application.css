@@ -250,6 +250,7 @@
 .salon-box h1 {
   background: #aab6b9;
   color: #FAF8F8;
+  padding: 10px;
   font-family: 'Noto Sans', sans-serif;
   font-size: 24px;
   margin-bottom: 20px;
@@ -304,4 +305,36 @@
   height: 100px;
   overflow: hidden;
   position: relative;
+}
+
+.service-button{
+  background: #D63232;
+  padding: 5px;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+}
+
+.service-button:hover{
+  background: #CC0000;
+  box-shadow: 0 1.5px 3px rgba(0,0,0,0.16), 0 1.5px 3px rgba(0,0,0,0.23);
+  padding: 5px;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+}
+
+.add {
+  background: #00994D;
+}
+
+.add:hover {
+  background: #008945;
 }
