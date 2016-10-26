@@ -13,6 +13,8 @@
           <i class="<%= service.icon %> fa-2x" aria-hidden="true"></i><br />
           <%= link_to service.name, salon_service_path(@salon.id, service.id) %><br />
           $<%= service.price %>
+          est tim: <%= service.time %><br />
+          <%= service.description %><br />
         </div>
       </li>
       <% end %>
