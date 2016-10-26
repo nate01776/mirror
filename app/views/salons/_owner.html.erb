@@ -13,6 +13,7 @@
             <div class="small-9 columns service-info">
               <b><%= service.name %></b><br />
               <%= service.description %><br />
+              <%= link_to 'Delete this service', salon_service_path(@salon.id, service.id), { method: :delete, id: service.id } %>
             </div>
           </a>
         </div>
@@ -35,6 +36,7 @@
           <% if product.in_stock %>
             <i class="<%= product.in_stock_icon %>" aria-hidden="true"></i> in stock!<br />
           <% end %>
+          <%= link_to 'Delete this product', salon_product_path(@salon.id, product.id), { method: :delete, id: product.id } %>
         </div>
         </a>
         <hr class="user-info-hr">
