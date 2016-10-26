@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   end
 
   resources :salons, only: [:new, :create, :show, :edit, :update] do
-    resources :services, only: [:new, :create, :show]
-    resources :products, only: [:new, :create, :show]
+    resources :services, only: [:new, :create, :show, :destroy]
+    resources :products, only: [:new, :create, :show, :destroy]
   end
 end

@@ -34,6 +34,19 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    @user = current_user
+    @salon = Salon.find(params[:salon_id])
+    @product = Product.find(params[:id])
+    if @user.user_type != "owner" || @salon.owner_id != @user.id
+      redirect_to root_path
+      flash[:notice] = "You do not have authorization to perform this action!"
+    end
+    @product.destroy
+    flash[:notice] = 'Product was successfully deleted'
+    redirect_to salon_path(@salon.id)
+  end
+
   private
 
   def product_params
