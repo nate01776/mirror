@@ -1,5 +1,4 @@
 class StylistserviceController < ApplicationController
-
   def new
     @service = Service.find(params[:format])
     @user = current_user
