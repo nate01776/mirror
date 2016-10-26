@@ -1,7 +1,7 @@
 class Service < ApplicationRecord
   belongs_to :salon
   has_many :products
-  has_many :stylists
+  has_many :users
 
   validates :name, presence: true
   validates :description, presence: true
