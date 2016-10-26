@@ -10,6 +10,7 @@ class SalonsController < ApplicationController
     @products = @salon.products
     @members = @salon.users
     @stylists = @salon.find_stylists(@members)
+    @user_services = @user.services
     @clients = @salon.find_clients(@members)
     @is_owner = false
     if @user.id == @salon.owner_id

@@ -12,7 +12,12 @@
           <br />
           <i class="<%= service.icon %> fa-2x" aria-hidden="true"></i><br />
           <%= link_to service.name, salon_service_path(@salon.id, service.id) %><br />
-          $<%= service.price %>
+          $<%= service.price %><br /><br />
+          <% if @user_services.find_by(id: service.id).nil? %>
+            <%= link_to '+',  new_salon_stylistservice_path(@salon.id, service.id), class:"button new-salon-button" %>
+          <% else %>
+            <%= link_to 'x',  salon_stylistservice_path(@salon.id, service.id), method: :delete, class:"button new-salon-button" %>
+          <% end %>
         </div>
       </li>
       <% end %>
