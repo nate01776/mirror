@@ -4,22 +4,21 @@
       <h1>services</h1>
     </div>
     <div class="row clients">
+      <ul class="user-profiles">
       <% @services.each do |service| %>
-        <div class="row">
-          <a href="/salons/<%= @salon.id %>/services/<%= service.id %>">
-            <div class="small-3 columns service-info">
-              <i class="<%= service.icon %> fa-2x" aria-hidden="true" id="service-icon-<%= service.id %>"></i>
-            </div>
-            <div class="small-9 columns service-info">
-              <b><%= service.name %></b> - $<%= service.price %> - est. time: <%= service.time %><br />
-              <%= service.description %><br />
-
-              <br />
-            </div>
-          </a>
+      <li>
+        <div
+        class="large-3 columns left mini-profile" >
+          <br />
+          <i class="<%= service.icon %> fa-2x" aria-hidden="true"></i><br />
+          <%= link_to service.name, salon_service_path(@salon.id, service.id) %><br />
+          $<%= service.price %>
+          est tim: <%= service.time %><br />
+          <%= service.description %><br />
         </div>
-        <hr class="user-info-hr">
+      </li>
       <% end %>
+    </ul>
     </div>
   </div>
 
@@ -28,18 +27,20 @@
       <h1>products</h1>
     </div>
     <div class="row">
+      <ul class="user-profiles">
       <% @products.each do |product| %>
-        <a href="/salons/<%= @salon.id %>/products/<%= product.id %>">
-        <div class="small-9 columns service-info">
-          <b><%= product.name %></b> - $<%= product.price %><br />
-          <%= product.description %><br />
-          <% if product.in_stock %>
-            <i class="<%= product.in_stock_icon %>" aria-hidden="true"></i> in stock!<br />
-          <% end %>
+      <li>
+        <div
+        class="large-3 columns left mini-profile" >
+          <br />
+          <i class="<%= product.icon %> fa-2x" aria-hidden="true"></i><br />
+          <%= link_to product.name, salon_product_path(@salon.id, product.id) %><br />
+          $<%= product.price %><br /><br />
+          <%= product.description %>
         </div>
-        </a>
-        <hr class="user-info-hr">
+      </li>
       <% end %>
+    </ul>
     </div>
   </div>
 
@@ -48,9 +49,36 @@
       <h1>stylists</h1>
     </div>
     <div class="row">
-      <% @stylists.each do |stylist| %>
-        <h3><%= stylist.full_name %></h3>
-      <% end %>
+      <ul class="user-profiles">
+        <% @stylists.each do |stylist| %>
+        <li>
+          <div class="row">
+            <div
+            class="large-10 columns left mini-profile"
+            style="background:
+            linear-gradient(
+              rgba(255, 255, 255, 0.5),
+              rgba(255, 255, 255, 0.5)),
+            <% if stylist.image.url != nil %>
+              url(<%= stylist.image %>);
+            <% else %>
+              url(<%= stylist.default_image %>);
+            <% end %>
+            background-size: cover;
+            background-position: center;" >
+              <br />
+              <% if stylist.image.url != nil %>
+                <%= image_tag stylist.image.url, class:"mini-round-image" %><br />
+              <% else %>
+                <%= image_tag stylist.default_image, class:"mini-round-image" %><br />
+              <% end %>
+              <br />
+              <%= link_to stylist.full_name, user_profile_path(@user.id, stylist.id), class:"button new-salon-button" %>
+            </div>
+          </div>
+        </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>
