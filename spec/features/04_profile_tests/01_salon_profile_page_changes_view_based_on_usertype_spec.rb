@@ -26,7 +26,7 @@ describe 'Salon page changes display based on type of user' do
       fill_in 'password', with: user_client.password
       click_button('log in')
 
-      expect(page).to have_content('client management console')
+      expect(page).to have_content('upcoming appointments')
       expect(page).to have_content('salon info')
       expect(page).to have_content('past appointments')
     end
@@ -38,7 +38,7 @@ describe 'Salon page changes display based on type of user' do
       fill_in 'password', with: user_stylist.password
       click_button('log in')
 
-      expect(page).to have_content('services management')
+      expect(page).to have_content('upcoming appointments')
       expect(page).to have_content('salon info')
       expect(page).to have_content('clients')
     end

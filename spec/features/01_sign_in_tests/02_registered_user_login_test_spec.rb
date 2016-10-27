@@ -41,7 +41,7 @@ describe 'User sign in page' do
       expect(page).to have_content(user_client.username)
       expect(page).to have_content(user_client.first_name)
       expect(page).to have_content(user_client.last_name)
-      expect(page).to have_content('client')
+      expect(page).to have_content('upcoming appointments')
     end
 
     scenario 'stylist user should see stylist profile page' do
@@ -54,7 +54,7 @@ describe 'User sign in page' do
       expect(page).to have_content(user_stylist.username)
       expect(page).to have_content(user_stylist.first_name)
       expect(page).to have_content(user_stylist.last_name)
-      expect(page).to have_content('services')
+      expect(page).to have_content('upcoming appointments')
     end
 
     scenario 'owner user should see owner profile page' do

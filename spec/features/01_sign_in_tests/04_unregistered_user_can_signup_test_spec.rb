@@ -38,7 +38,7 @@ describe 'User sign in page' do
       expect(page).to have_content('Girl')
       expect(page).to have_content('factorygirl@gmail.com')
       expect(page).to have_content('factorygirl')
-      expect(page).to have_content('client')
+      expect(page).to have_content('upcoming appointments')
     end
 
     scenario 'should provide errors if form incorrectly filled out' do
