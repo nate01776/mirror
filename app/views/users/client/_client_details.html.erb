@@ -8,18 +8,7 @@
     <li>
       <div
         class="large-3 columns mini-profile"
-        style="background:
-        linear-gradient(
-          rgba(255, 255, 255, 0.5),
-          rgba(255, 255, 255, 0.5)),
-        <% if appointment.client.image != nil %>
-          url(<%= appointment.stylist.image %>);
-        <% else %>
-          url(<%= @user.default_image %>);
-        <% end %>
-        background-size: cover;
-        background-position: center;
-        padding: 10px;" >
+        style="padding: 10px;" >
           <i class="<%= appointment.service.icon %> fa-4x appt-icon" aria-hidden="true"></i>
           <br /><br />
           <div class="appt-info-container">
