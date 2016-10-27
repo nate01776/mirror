@@ -14,12 +14,14 @@ class UsersController < ApplicationController
       end
     end
     if @status == 'stylist'
-      @client_services = []
-      Clientservice.all.each do |service|
-        if Stylistservice.find(service.stylistservice_id).user_id == @user.id
-          @client_services << service
+      @stylist_services = Stylistservice.where("user_id = #{@user.id}")
+      @client_appts = []
+      Clientservice.all.each do |appt|
+        if appt.stylist.id == @user.id
+          @client_appts << appt
         end
       end
+      @client_appts = @client_appts.sort_by{ |appt| appt.datetime }
     end
   end
 

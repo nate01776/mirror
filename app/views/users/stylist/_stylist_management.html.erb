@@ -1,36 +1,31 @@
 <div class="row">
-  <h1>services management</h1>
+  <h1>upcoming appointments</h1>
 </div>
 <div class="row">
   <ul class="user-profiles">
-  <% @client_services.each do |service| %>
-    <% appt = Stylistservice.find(service.stylistservice_id) %>
-    <% srv = Service.find(appt.service_id) %>
+  <% @client_appts.each do |appointment| %>
     <li>
-      <div class="row">
         <div
-        class="large-10 columns left mini-profile"
+        class="large-3 columns mini-profile"
         style="background:
         linear-gradient(
           rgba(255, 255, 255, 0.5),
           rgba(255, 255, 255, 0.5)),
-        <% if User.find(service.user_id).image != nil %>
-          url(<%= User.find(service.user_id).image %>);
+        <% if appointment.client.image != nil %>
+          url(<%= appointment.client.image %>);
         <% else %>
           url(<%= @user.default_image %>);
         <% end %>
         background-size: cover;
         background-position: center;
         padding: 10px;" >
-          <% if User.find(service.user_id).image != nil %>
-            <%= image_tag User.find(service.user_id).image, class: "mini-round-image left" %>
-          <% end %>
-          <br />
-          <i class="<%= srv.icon %> fa-2x" aria-hidden="true"></i><br />
-          <b><%= User.find(service.user_id).full_name %></b><br />
-          <%= srv.name %><br />
-          <%= service.datetime %><br />
-        </div>
+          <i class="<%= appointment.service.icon %> fa-4x appt-icon" aria-hidden="true"></i>
+          <br /><br />
+          <div class="appt-info-container">
+            <b><%= appointment.client.full_name %></b><br />
+            <%= appointment.service.name %><br />
+            <%= Time.parse(appointment.datetime).strftime('%B %e %Y') %><br />
+          </div>
         </div>
         </li>
   <% end %>

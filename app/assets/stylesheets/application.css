@@ -293,6 +293,7 @@
 
 .mini-profile {
   margin: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .user-profiles {
@@ -302,9 +303,11 @@
 .mini-round-image {
   border: 1px solid white;
   border-radius: 50%;
-  height: 100px;
+  min-width: 100px;
+  min-height: 100px;
+  max-height: 100px;
+  max-width: 100px;
   overflow: hidden;
-  position: relative;
 }
 
 .service-button{
@@ -337,4 +340,14 @@
 
 .add:hover {
   background: #008945;
+}
+
+.appt-info-container {
+  background: white;
+  padding: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.appt-icon {
+  color: black;
 }
