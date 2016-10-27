@@ -21,6 +21,6 @@ Rails.application.routes.draw do
     resources :services, only: [:new, :create, :show, :destroy]
     resources :products, only: [:new, :create, :show, :destroy]
     resources :stylistservice, only: [:new, :create, :destroy]
-    resources :clientservice, only: [:new, :create, :destroy]
+    resources :clientservices
   end
 end

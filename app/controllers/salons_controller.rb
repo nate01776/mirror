@@ -5,6 +5,7 @@ class SalonsController < ApplicationController
 
   def show
     @user = current_user
+    @clientservice = Clientservice.new
     @salon = Salon.find(params[:id])
     @services = @salon.services
     @products = @salon.products

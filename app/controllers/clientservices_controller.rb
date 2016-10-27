@@ -1,4 +1,4 @@
-class ClientserviceController < ApplicationController
+class ClientservicesController < ApplicationController
   def new
     @clientservice = Clientservice.new
     @salon = Salon.find(params[:salon_id])
@@ -26,5 +26,11 @@ class ClientserviceController < ApplicationController
     end
     @user.services.delete(params[:id])
     redirect_to salon_path(params[:salon_id])
+  end
+
+  private
+
+  def appt_params
+    params.require(:clientservice).permit(:service, :stylist, :datetime)
   end
 end
