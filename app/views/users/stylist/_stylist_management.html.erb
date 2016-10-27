@@ -5,7 +5,7 @@
   <ul class="user-profiles">
   <% @client_appts.each do |appointment| %>
     <li>
-        <div
+      <div
         class="large-3 columns mini-profile"
         style="background:
         linear-gradient(
@@ -27,6 +27,6 @@
             <%= Time.parse(appointment.datetime).strftime('%B %e %Y') %><br />
           </div>
         </div>
-        </li>
+      </li>
   <% end %>
 </div>
