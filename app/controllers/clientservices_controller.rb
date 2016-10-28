@@ -6,13 +6,26 @@ class ClientservicesController < ApplicationController
     @salon_stylists = []
     @salon.users.each do |s|
       if s.is_stylist?
-        @salon_stylists << s
+        to_push = {
+          :stylist => nil,
+          :services => nil }
+        to_push[:services] = s.services
+        to_push[:stylist] = s
+        @salon_stylists << to_push
       end
     end
+
+    gon.salon_stylists = @salon_stylists
+    gon.salon_services = @salon_services
   end
 
   def create
-    binding.pry
+    @new_service = Clientservice.new(appt_params)
+    @new_service.user_id = current_user.id
+    stylist = User.find(params[:clientservice][:stylist_id])
+    service = stylist.services.find_by(name: params[:clientservice][:service_id])
+    stylistservice = Stylistservice.find_by(service_id: service.id, user_id: stylist.id)
+    @new_service.save
   end
 
   def destroy
@@ -31,6 +44,6 @@ class ClientservicesController < ApplicationController
   private
 
   def appt_params
-    params.require(:clientservice).permit(:service, :stylist, :datetime)
+    params.require(:clientservice).permit(:stylist_id, :datetime)
   end
 end
