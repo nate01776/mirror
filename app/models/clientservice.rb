@@ -8,10 +8,10 @@ class Clientservice < ApplicationRecord
   def stylist
     User.find(Stylistservice.find(self.stylistservice_id).user_id)
   end
-  # 
-  # def service
-  #   Service.find(Stylistservice.find(self.stylistservice_id).service_id)
-  # end
+  
+  def service
+    Service.find(Stylistservice.find(self.stylistservice_id).service_id)
+  end
 
   def client
     User.find(self.user_id)
