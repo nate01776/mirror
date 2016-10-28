@@ -17,7 +17,7 @@
         </div>
 
         <div class="field login-field">
-          <%= q.label :price, "Price (optional)" %>
+          <%= q.label :price, "Price" %>
           <%= q.text_field :price %>
         </div>
 
@@ -32,7 +32,7 @@
         </div>
 
         <div class="actions">
-          <a href="/" class="button login-page-button"><</a>
+          <%= link_to "<", salon_path(params[:salon_id]), class:"button new-salon-button" %>
           <input class="submit button new-salon-button"
             name="commit"
             type="submit"
