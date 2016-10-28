@@ -26,6 +26,7 @@ class ClientservicesController < ApplicationController
     service = stylist.services.find_by(name: params[:clientservice][:service_id])
     stylistservice = Stylistservice.find_by(service_id: service.id, user_id: stylist.id)
     @new_service.service_id = service.id
+    @new_service.datetime = Time.parse(@new_service.datetime)
     @new_service.save
     redirect_to root_path
   end
