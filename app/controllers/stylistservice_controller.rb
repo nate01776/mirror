@@ -16,6 +16,6 @@ class StylistserviceController < ApplicationController
       end
     end
     @user.services.delete(params[:id])
-    redirect_to salon_path(params[:salon_id]) 
+    redirect_to salon_path(params[:salon_id])
   end
 end

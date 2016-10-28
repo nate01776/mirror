@@ -6,9 +6,7 @@ class ClientservicesController < ApplicationController
     @salon_stylists = []
     @salon.users.each do |s|
       if s.is_stylist?
-        to_push = {
-          :stylist => nil,
-          :services => nil }
+        to_push = { stylist: nil, services: nil }
         to_push[:services] = s.services
         to_push[:stylist] = s
         @salon_stylists << to_push
@@ -24,7 +22,6 @@ class ClientservicesController < ApplicationController
     @new_service.user_id = current_user.id
     stylist = User.find(params[:clientservice][:stylist_id])
     service = stylist.services.find_by(name: params[:clientservice][:service_id])
-    stylistservice = Stylistservice.find_by(service_id: service.id, user_id: stylist.id)
     @new_service.service_id = service.id
     @new_service.datetime = Time.parse(@new_service.datetime)
     @new_service.save

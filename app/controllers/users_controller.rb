@@ -20,12 +20,12 @@ class UsersController < ApplicationController
       Clientservice.all.each do |appt|
         if appt.stylist.id == @user.id
           @client_appts << appt
-          if !@clients.include?(User.find(appt.user_id))
+          unless @clients.include?(User.find(appt.user_id))
             @clients << User.find(appt.user_id)
           end
         end
       end
-      @client_appts = @client_appts.sort_by{ |appt| appt.datetime }
+      @client_appts = @client_appts.sort_by { |appt| appt.datetime }
     end
     if @status == 'client'
       @client_appts = []
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
           @client_appts << appt
         end
       end
-      @client_appts = @client_appts.sort_by{ |appt| appt.datetime }
+      @client_appts = @client_appts.sort_by { |appt| appt.datetime }
     end
   end
 

@@ -8,18 +8,18 @@ class Clientservice < ApplicationRecord
   validates :user_id, presence: true
 
   def stylist
-    User.find(self.stylist_id)
+    User.find(stylist_id)
   end
 
   def service
-    Service.find(self.service_id)
+    Service.find(service_id)
   end
 
   def salon
-    Salon.find(self.service.salon_id)
+    Salon.find(service.salon_id)
   end
 
   def client
-    User.find(self.user_id)
+    User.find(user_id)
   end
 end
