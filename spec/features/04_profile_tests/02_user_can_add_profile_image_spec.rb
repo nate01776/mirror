@@ -24,14 +24,14 @@ describe ImageUploader do
       click_link('add user image')
       attach_file('upload-here', './spec/images/doge.jpg')
       click_button('Update User')
-      expect(page).to have_content('client management')
+      expect(page).to have_content('upcoming appointments')
       expect(find_by_id('user-profile-info')[:style]).to have_content('doge.jpg')
     end
 
     scenario 'User clicks "update user", but doesnt add file and is returned to their root' do
       click_link('add user image')
       click_button('Update User')
-      expect(page).to have_content('client management')
+      expect(page).to have_content('upcoming appointments')
     end
   end
 end

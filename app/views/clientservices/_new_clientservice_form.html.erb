@@ -1,0 +1,33 @@
+<div class="row">
+  <%= form_for ([@salon, @clientservice]) do |q| %>
+    <div class="row">
+      <div class="small-12 large-4 columns">
+        <div class="field login-field">
+          <%= q.label :service_id, "Service"%>
+          <%= q.select :service_id, options_for_select(@salon_services.map { |c| [c.name]}) %>
+        </div>
+      </div>
+      <div class="small-12 large-4 columns">
+        <div class="field login-field">
+          <%= q.label :stylist_id, "Service" %>
+          <%= q.select :stylist_id, options_for_select("") %>
+        </div>
+      </div>
+    <div class="small-12 large-3 columns">
+        <div class="field login-field">
+          <%= q.label :datetime, "Date" %>
+          <%= q.text_field :datetime, id:'dp1' %>
+        </div>
+    </div>
+  </div>
+
+
+      <div class="actions">
+        <input class="submit button new-salon-button"
+          name="commit"
+          type="submit"
+          value="request appointment" />
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,5 +1,6 @@
-<div class="row large-centered salon-big-box">
-  <div class="small-12 large-4 columns salon-box">
+<div class="row">
+
+  <div class="small-12 large-4 columns salon-services-box">
     <div class="row">
       <h1>services</h1>
     </div>
@@ -8,20 +9,21 @@
       <% @services.each do |service| %>
       <li>
         <div
-        class="large-3 columns left mini-profile" >
+        class="large-5 columns  mini-profile" >
           <br />
           <i class="<%= service.icon %> fa-2x" aria-hidden="true"></i><br />
           <%= link_to service.name, salon_service_path(@salon.id, service.id) %><br />
           $<%= service.price %>
-          est tim: <%= service.time %><br />
+          est time: <%= service.time %><br />
         </div>
       </li>
       <% end %>
     </ul>
     </div>
+    <%= link_to '+',  new_salon_clientservice_path(@salon.id, @clientservice), class:"button service-button add" %><br/>Request Appointment
   </div>
 
-  <div class="small-12 large-4 columns salon-box">
+  <div class="small-12 large-4 columns salon-center-box">
     <div class="row">
       <h1>products</h1>
     </div>
@@ -30,7 +32,7 @@
       <% @products.each do |product| %>
       <li>
         <div
-        class="large-3 columns left mini-profile" >
+        class="large-5 columns mini-profile" >
           <br />
           <i class="<%= product.icon %> fa-2x" aria-hidden="true"></i><br />
           <%= link_to product.name, salon_product_path(@salon.id, product.id) %><br />
@@ -80,4 +82,9 @@
       </ul>
     </div>
   </div>
+
 </div>
+
+
+
+<!-- </div> -->

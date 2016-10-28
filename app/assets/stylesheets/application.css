@@ -17,7 +17,7 @@
  */
 
  .custom-title-bar {
-   background: #aab6b9;
+   background: #414141;
    height: 75px;
    box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
  }
@@ -28,6 +28,23 @@
 
  .inline {
    display: inline-block;
+ }
+
+ #sign-out {
+   margin-top: 10px;
+   background: #D63232;
+   padding: 5px;
+   font-size: 18px;
+   box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
+   border-radius: 50%;
+   width: 30px;
+   height: 30px;
+   vertical-align: middle;
+ }
+
+ #sign-out:hover{
+   background: #CC0000;
+   box-shadow: 0 1.5px 3px rgba(0,0,0,0.16), 0 1.5px 3px rgba(0,0,0,0.23);
  }
 
  .custom-bar {
@@ -44,7 +61,9 @@
  }
 
 .site-logo {
-  width: 100px;
+  position: absolute;
+  top: -2px;
+  width: 125px;
 }
 
 .current-user-name {
@@ -108,21 +127,29 @@
 }
 
 .new-salon-button {
-  background: #D63232;
-  padding: 5px;
-  font-size: 14px;
+  background: #414141;
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+  padding: 10px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
   border-radius: 2px;
   vertical-align: middle;
+  width: 200px;
+}
+
+.new-salon-button:visited {
+  background: #414141;
+  color: white;
 }
 
 .new-salon-button:hover {
-  background: #CC0000;
+  background: #7a7a7a;
   box-shadow: 0 1.5px 3px rgba(0,0,0,0.16), 0 1.5px 3px rgba(0,0,0,0.23);
 }
 
 .new-salon-button:active {
-  background: #D63232;
+  background: #7a7a7a;
   box-shadow: 0 4px 7px rgba(0,0,0,0.16), 0 4px 7px rgba(0,0,0,0.23);
 }
 
@@ -191,8 +218,12 @@
   padding-bottom: 20px;
 }
 
+.user-box a {
+  color: #414141;
+}
+
 .user-box h1 {
-  background: #aab6b9;
+  background: #7a7a7a;
   color: #FAF8F8;
   padding: 10px;
   font-family: 'Noto Sans', sans-serif;
@@ -268,7 +299,7 @@
 
 .mini-service-icon {
   transition: color 0.5s ease;
-  color: #D63232;
+  color: #414141;
 }
 
 .mini-service-icon:hover {
@@ -277,8 +308,8 @@
 
 .add-white-backer {
   background: white;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 60px;
+  margin-right: 60px;
   padding: 10px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
 }
@@ -293,6 +324,7 @@
 
 .mini-profile {
   margin: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .user-profiles {
@@ -302,9 +334,11 @@
 .mini-round-image {
   border: 1px solid white;
   border-radius: 50%;
-  height: 100px;
+  min-width: 100px;
+  min-height: 100px;
+  max-height: 100px;
+  max-width: 100px;
   overflow: hidden;
-  position: relative;
 }
 
 .service-button{
@@ -337,4 +371,46 @@
 
 .add:hover {
   background: #008945;
+}
+
+.appt-info-container {
+  background: white;
+  padding: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.appt-icon {
+  color: #414141;
+}
+
+.salon-center-box {
+  text-align: center;
+  background: #FAF8F8;
+  padding-bottom: 20px;
+}
+
+.salon-center-box h1 {
+  background: #aab6b9;
+  color: #FAF8F8;
+  padding: 10px;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.salon-services-box {
+  text-align: center;
+  background: #FAF8F8;
+  padding-bottom: 20px;
+}
+
+.salon-services-box h1 {
+  background: #aab6b9;
+  color: #FAF8F8;
+  padding: 10px;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
 }

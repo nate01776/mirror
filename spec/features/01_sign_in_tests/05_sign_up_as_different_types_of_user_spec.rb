@@ -22,7 +22,7 @@ describe 'User sign in page' do
       expect(page).to have_content('Girl')
       expect(page).to have_content('factorygirl@gmail.com')
       expect(page).to have_content('factorygirl')
-      expect(page).to have_content('services')
+      expect(page).to have_content('upcoming appointments')
     end
 
     scenario 'should enter information into fields, click sign up and be logged in as owner' do

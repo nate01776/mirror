@@ -1,0 +1,23 @@
+<div class="row large-centered salon-big-box">
+  <div class="small-12 large-12 columns salon-box">
+    <div class="row">
+      <h1>schedule appointment</h1>
+    </div>
+    <div class="row clients">
+      <%= render 'new_clientservice_form' %>
+      <script>
+        $(function(){
+        	$('#dp1').fdatepicker({
+        		initialDate: '2016-12-05',
+        		format: 'yyyy-mm-dd hh:ii',
+        		disableDblClickSelection: true,
+        		leftArrow:'<<',
+        		rightArrow:'>>',
+        		closeIcon:'X',
+        		closeButton: true,
+            pickTime: true
+        	});
+        });
+      </script>
+    </div>
+  </div>

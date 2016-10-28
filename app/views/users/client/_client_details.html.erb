@@ -2,5 +2,22 @@
   <h1>past appointments</h1>
 </div>
 <div class="row">
-  <h4>past appointment details</h4>
+  <ul class="user-profiles">
+  <% @client_appts.each do |appointment| %>
+    <% if Time.parse(appointment.datetime) < Time.now %>
+    <li>
+      <div
+        class="large-3 columns mini-profile"
+        style="padding: 10px;" >
+          <i class="<%= appointment.service.icon %> fa-4x appt-icon" aria-hidden="true"></i>
+          <br /><br />
+          <div class="appt-info-container">
+            <b><%= appointment.stylist.full_name %></b><br />
+            <%= appointment.service.name %><br />
+            <%= Time.parse(appointment.datetime).strftime('%B %e %Y') %><br />
+          </div>
+        </div>
+      </li>
+      <% end %>
+  <% end %>
 </div>
