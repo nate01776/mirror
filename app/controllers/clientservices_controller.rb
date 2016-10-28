@@ -5,7 +5,7 @@ class ClientservicesController < ApplicationController
     @salon_services = @salon.services
     @salon_stylists = []
     @salon.users.each do |s|
-      if s.user_type == 'stylist'
+      if s.is_stylist?
         @salon_stylists << s
       end
     end
