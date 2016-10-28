@@ -1,16 +1,22 @@
 class Clientservice < ApplicationRecord
-  belongs_to :stylistservice
+  belongs_to :salon
+  belongs_to :service
   belongs_to :user
 
-  validates :stylistservice_id, presence: true
+  validates :service_id, presence: true
+  validates :stylist_id, presence: true
   validates :user_id, presence: true
 
   def stylist
-    User.find(Stylistservice.find(self.stylistservice_id).user_id)
+    User.find(self.stylist_id)
   end
-  
+
   def service
-    Service.find(Stylistservice.find(self.stylistservice_id).service_id)
+    Service.find(self.service_id)
+  end
+
+  def salon
+    Salon.find(self.service.salon_id)
   end
 
   def client
