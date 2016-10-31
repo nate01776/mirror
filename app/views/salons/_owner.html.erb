@@ -14,6 +14,7 @@
           <%= link_to service.name, salon_service_path(@salon.id, service.id) %><br />
           $<%= service.price %><br />
           est time: <%= service.time %><br />
+          <%= link_to 'Delete this service', salon_service_path(@salon.id, service.id), { method: :delete } %>
         </div>
       </li>
       <% end %>
@@ -37,7 +38,8 @@
           <i class="<%= product.icon %> fa-2x" aria-hidden="true"></i><br />
           <%= link_to product.name, salon_product_path(@salon.id, product.id) %><br />
           $<%= product.price %><br /><br />
-          <%= product.description %>
+          <%= product.description %><br />
+          <%= link_to 'Delete this product', salon_product_path(@salon.id, product.id), { method: :delete } %>
         </div>
       </li>
       <% end %>
