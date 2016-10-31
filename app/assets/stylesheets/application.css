@@ -80,52 +80,6 @@
   padding: 10px;
 }
 
-.login-box {
-  text-align: center;
-  background: #FAF8F8;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  margin-bottom: 50px;
-  padding-bottom: 20px;
-}
-
-.login-box h1 {
-  background: #aab6b9;
-  color: #FAF8F8;
-  padding: 10px;
-  font-family: 'Noto Sans', sans-serif;
-  margin-bottom: 0px;
-}
-
-.login-box h3 {
-  color: black;
-  font-size: 20px;
-  padding: 10px;
-  font-family: 'Noto Sans', sans-serif;
-  text-align: right;
-}
-
-.login-box h4 {
-  color: black;
-  font-size: 16px;
-  padding: 10px;
-  font-family: 'Noto Sans', sans-serif;
-}
-
-.login-buttons {
-  padding-top: 20px;
-}
-
-.login-page-button {
-  background: #aab6b9;
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 20%;
-  padding: 5px;
-  font-size: 14px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
-  border-radius: 2px;
-}
-
 .new-salon-button {
   background: #414141;
   color: white;
@@ -150,16 +104,6 @@
 
 .new-salon-button:active {
   background: #7a7a7a;
-  box-shadow: 0 4px 7px rgba(0,0,0,0.16), 0 4px 7px rgba(0,0,0,0.23);
-}
-
-.login-page-button:hover {
-  background: #babfc0;
-  box-shadow: 0 1.5px 3px rgba(0,0,0,0.16), 0 1.5px 3px rgba(0,0,0,0.23);
-}
-
-.login-page-button:active {
-  background: #babfc0;
   box-shadow: 0 4px 7px rgba(0,0,0,0.16), 0 4px 7px rgba(0,0,0,0.23);
 }
 
@@ -218,8 +162,11 @@
   padding-bottom: 20px;
 }
 
-.user-box a {
-  color: #414141;
+.user-noshadow-box {
+  text-align: center;
+  background: #FAF8F8;
+  margin-bottom: 50px;
+  padding-bottom: 20px;
 }
 
 .user-box h1 {
@@ -276,6 +223,7 @@
 }
 
 .clients {
+  /*padding-right: 40px;*/
 }
 
 .salon-box h1 {
@@ -320,11 +268,18 @@
 
 .user-image {
   width: 20%;
+  margin:auto;
 }
 
 .mini-profile {
   margin: 10px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
+  transition: box-shadow 0.2s ease;
+  padding-bottom: 10px;
+}
+.mini-profile:hover {
+  transition: box-shadow 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05), 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .user-profiles {
@@ -413,4 +368,34 @@
   font-size: 24px;
   margin-bottom: 20px;
   text-align: center;
+}
+
+.mini-profile-button {
+  background: #414141;
+  color: white;
+  padding: 10px;
+  font-size: 12px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
+  border-radius: 2px;
+  vertical-align: middle;
+  width: 100px;
+}
+
+.mini-profile-button:hover {
+  background-color: #7a7a7a;
+  box-shadow: 0 1.5px 3px rgba(0,0,0,0.16), 0 1.5px 3px rgba(0,0,0,0.23);
+}
+
+.mini-profile-button:visited {
+  background: #414141;
+  color: white;
+}
+
+.add-image-page {
+  text-align: center;
+}
+
+#upload-here {
+  width: 50%;
 }

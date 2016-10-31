@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="small-12 medium-8 large-6 large-centered medium-centered columns login-box">
+  <div class="small-12 large-6 large-centered columns user-box">
     <div class="row">
       <h1>sign up</h1>
     </div>
@@ -11,17 +11,17 @@
       <% end %>
 
       <div class="field login-field">
-        <br /><%= f.label :email, "email", class:"login-title" %>
+        <%= f.label :email, "email", class:"login-title" %>
         <%= f.email_field :email, autofocus: true %>
       </div>
 
       <div class="field login-field">
-        <br /><%= f.label :username, "username", class:"login-title" %>
+        <%= f.label :username, "username", class:"login-title" %>
         <%= f.text_field :username%>
       </div>
 
       <div class="field login-field">
-        <br /><%= f.label :password, "password" , class:"login-title" %>
+        <%= f.label :password, "password" , class:"login-title" %>
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %>
@@ -29,22 +29,22 @@
       </div>
 
       <div class="field login-field">
-        <br /><%= f.label :password_confirmation , "confirm password" , class: "login-title"%>
+        <%= f.label :password_confirmation , "confirm password" , class: "login-title"%>
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
       </div>
 
       <div class="field login-field">
-        <br /><%= f.label :first_name, "first name", class:"login-title" %>
+        <%= f.label :first_name, "first name", class:"login-title" %>
         <%= f.text_field :first_name%>
       </div>
 
       <div class="field login-field">
-        <br /><%= f.label :last_name, "last name", class:"login-title" %>
+        <%= f.label :last_name, "last name", class:"login-title" %>
         <%= f.text_field :last_name%>
       </div>
 
       <div class="field login-field">
-        <br /><%= f.label :phone, "phone (optional)", class:"login-title" %>
+        <%= f.label :phone, "phone (optional)", class:"login-title" %>
         <%= f.text_field :phone%>
       </div>
 
@@ -52,10 +52,10 @@
         <%= f.label :user_type, "please select how you will use this site" %>
         <%= f.select :user_type, [['client', 'client'], ['stylist', 'stylist'], ['owner', 'owner']] %>
       </div>
-
+      <br />
       <div class="actions">
-        <a href="/" class="button login-page-button"><</a>
-        <input class="submit button login-page-button"
+        <a href="/" class="button new-salon-button"><</a>
+        <input class="submit button new-salon-button"
           id="user_submit" name="commit"
           type="submit"
           value="sign up" />

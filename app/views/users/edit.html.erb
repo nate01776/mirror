@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="small-12 large-10 large-centered columns user-box">
+  <div class="small-12 large-10 large-centered columns user-box center-me">
     <div class="row">
       <h1><%= @user.email %></h1>
     </div>
@@ -8,6 +8,7 @@
         <%= image_tag @image, id:"upload-image" %>
       </div>
     <% end %>
+    <br />
     <%= render 'add_image_form' %>
     <br>
   </div>

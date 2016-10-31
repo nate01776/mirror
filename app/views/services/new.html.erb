@@ -32,7 +32,7 @@
         </div>
 
         <div class="actions">
-          <a href="/" class="button login-page-button"><</a>
+          <%= link_to "<", salon_path(params[:salon_id]), class:"button new-salon-button" %>
           <input class="submit button new-salon-button"
             name="commit"
             type="submit"
