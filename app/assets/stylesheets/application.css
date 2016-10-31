@@ -268,6 +268,7 @@
 
 .user-image {
   width: 20%;
+  margin:auto;
 }
 
 .mini-profile {
@@ -389,4 +390,12 @@
 .mini-profile-button:visited {
   background: #414141;
   color: white;
+}
+
+.add-image-page {
+  text-align: center;
+}
+
+#upload-here {
+  width: 50%;
 }
