@@ -30,7 +30,7 @@ describe 'User opens profile page by default' do
       expect(page).to have_content(salon.name)
       expect(page).to have_content(salon.address)
       expect(page).to have_content(salon.city)
-      expect(page).to have_link('search for new salons')
+      expect(page).to have_link('find new salon')
     end
 
     scenario 'should see message if no salons added' do

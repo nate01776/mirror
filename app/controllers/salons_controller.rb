@@ -33,7 +33,17 @@ class SalonsController < ApplicationController
 
   def index
     @user = current_user
-    @salons = @user.salons
+    @usersalons = @user.salons
+    @salons = Salon.all.order('name ASC')
+    if params[:search]
+      @results = Salon.search(params[:search]).order('name ASC')
+    else
+      @salons = Salon.all.order('name ASC')
+    end
+    # respond_to do |format|
+    #   format.html
+    #   format.json { render json: @salons }
+    # end
   end
 
   def edit

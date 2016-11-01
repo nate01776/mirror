@@ -1,9 +1,9 @@
-<div class="row small-12 large-6 large-centered salon-big-box">
-  <div class="small-12 large-12 columns salon-box">
+<div class="row small-12 large-6 large-centered user-box">
+  <div class="small-12 large-12 columns user-noshadow-box">
     <div class="row">
       <h1><%= @user.full_name %>'s salons</h1>
     </div>
-      <% @salons.each do |salon| %>
+      <% @usersalons.each do |salon| %>
         <div class="row"
           id="salon-profile-<%=salon.id%>"
           style="background:
@@ -32,5 +32,71 @@
 
         <hr class="user-info-hr">
       <% end %>
+
+      <div class="row">
+        <h1>Find a new salon</h1>
+      </div>
+      <div class="">
+        <%= form_tag(salons_path, :method => 'get') do %>
+          <%= text_field_tag :search, params[:search], placeholder: 'search salons', class:"search-form" %>
+          <%= submit_tag 'Search', name: nil, class:"search-button" %>
+        <% end %>
+      </div>
+      <% if @results.nil? %>
+          <div id="app"></div>
+      <% else %>
+        <div>
+        <h3> Search Results: </h3>
+        <% if @results.empty? %>
+        <div class="row">
+          <h3>
+            Sorry, your search yielded no locations.
+          </h3>
+        </div>
+        <% else %>
+        <% @results.each do |salon| %>
+          <div class="row"
+            id="salon-profile-<%=salon.id%>"
+            style="background:
+            linear-gradient(
+              rgba(255, 255, 255, 0.8),
+              rgba(255, 255, 255, 0.8)),
+              <% if salon.image.url != nil %>
+                url(<%= salon.image %>);
+              <% end %>
+            background-size: cover;
+            background-position: center;">
+            <% if @user.is_stylist? %>
+              <div class="small-6 columns salon-pic">
+                <% if salon.open_chair_count != 0 %>
+                  <hr class="user-info-hr">
+                  <i class="fa fa-external-link open_chairs" aria-hidden="true"></i> <%= salon.open_chair_count %> chairs available<br /><br />
+                  <hr class="user-info-hr">
+                <% end %>
+              </div>
+            <% end %>
+            <a href="/salons/<%= salon.id %>">
+              <div class="small-6 columns salon-info">
+                <b><%= salon.name %></b><br />
+                <%= salon.address %>, <%= salon.city %> <%= salon.state %><br />
+                <%= salon.phone %><br />
+                <%= salon.email %><br />
+                </a>
+                <% salon.services.each do |service| %>
+                  <i class="<%= service.icon %> mini-service-icon" aria-hidden="true"></i>
+                <% end %>
+                <br />
+                <% if @user.is_client? && !salon.users.include?(@user)%>
+                  <a href="/users/<%= @user.id %>/salons/<%= salon.id %>/fav" class="button favorite">+ add as favorite</a>
+                <% end %>
+              </div>
+            </a>
+          </div>
+          <hr class="user-info-hr">
+          <% end %>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
