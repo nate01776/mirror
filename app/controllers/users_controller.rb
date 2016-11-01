@@ -58,6 +58,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def fav
+    @user = current_user
+    @salon = Salon.find(params[:id])
+    @salon.users << @user
+    redirect_to salons_path
+  end
+
   private
 
   def user_params

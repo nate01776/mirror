@@ -399,3 +399,15 @@
 #upload-here {
   width: 50%;
 }
+
+.favorite {
+  background: #00994D;
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.2);
+  border-radius: 2px;
+  vertical-align: middle;
+  width: 200px;
+}

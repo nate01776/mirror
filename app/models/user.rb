@@ -24,6 +24,10 @@ class User < ApplicationRecord
     user_type == "stylist"
   end
 
+  def is_client?
+    user_type = "client"
+  end
+
   def full_name
     first_name + " " + last_name
   end

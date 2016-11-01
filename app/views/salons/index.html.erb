@@ -85,7 +85,10 @@
                 <% salon.services.each do |service| %>
                   <i class="<%= service.icon %> mini-service-icon" aria-hidden="true"></i>
                 <% end %>
-                <br /><br />
+                <br />
+                <% if @user.is_client? && !salon.users.include?(@user)%>
+                  <a href="/users/<%= @user.id %>/salons/<%= salon.id %>/fav" class="button favorite">+ add as favorite</a>
+                <% end %>
               </div>
             </a>
           </div>
