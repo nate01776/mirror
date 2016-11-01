@@ -25,14 +25,14 @@ describe 'User opens profile page by default' do
 
     scenario 'user should see list of all their salons after clicking link' do
       visit '/'
-      click_link 'see all my salons'
+      click_link 'see all salons'
       expect(page).to have_content(salon.name)
       expect(page).to have_content(salon_2.name)
     end
 
     scenario 'user should click link to see salon profile page' do
       visit '/'
-      click_link 'see all my salons'
+      click_link 'see all salons'
       click_link salon.name
       expect(page).to have_content(salon.name)
       expect(page).to have_content('services')
