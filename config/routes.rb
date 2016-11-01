@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     resources :salons, only: [:index]
   end
 
-  resources :salons, only: [:new, :create, :show, :edit, :update] do
+  resources :salons, only: [:new, :create, :show, :index, :edit, :update] do
     resources :services, only: [:new, :create, :show, :destroy]
     resources :products, only: [:new, :create, :show, :destroy]
     resources :stylistservice, only: [:new, :create, :destroy]
