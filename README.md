@@ -40,5 +40,5 @@ $rails server
 Visit http://localhost:3000 in your browser
 
 #Running tests
-All of the above
+Follow steps in 'viewing in the browser'<br>
 $rake
