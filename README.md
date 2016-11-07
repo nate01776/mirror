@@ -10,34 +10,42 @@
 
 https://mirror-nw.herokuapp.com/
 
+example salon owner account<br>
+- username: test_owner@gmail.com / pw: mirror<br>
+example salon stylist account<br>
+- username: test_sylist@gmail.com / pw: mirror<br>
+example salon client account<br>
+- username: test_client@gmail.com / pw: mirror<br>
+
+
 #Description
 
-Mirror is an app to handle the management of stylists and clients for salon owners. Owners can add their location, services and products. Stylists can join salons, associate with services and check upcoming appointments. Clients can search for a salon, look through service and product details and set up appointments.
+Mirror is an app to handle the management of stylists and clients for salon owners. Owners can add their location, services and products. Stylists can join salons, associate with services and check upcoming appointments. Clients can search for a salon, look through service and product details and set up appointments.<br>
 
 #Ruby version
 
-Ruby version 2.3.1
+Ruby version 2.3.1<br>
 
 #Technologies Utilized
 
-Ruby on Rails
-Javascript
-Devise for User Authenticaton
-CarrierWave for Photo Uploads
-Heroku for hosting
-Codeship for continuous integration and deployment
-CSS & Foundations for styling
-JQuery
-Factory_Girl, Capybara, RSpec for testing
+Ruby on Rails<br>
+Javascript<br>
+Devise for User Authenticaton<br>
+CarrierWave for Photo Uploads<br>
+Heroku for hosting<br>
+Codeship for continuous integration and deployment<br>
+CSS & Foundations for styling<br>
+JQuery<br>
+Factory_Girl, Capybara, RSpec for testing<br>
 
 #Viewing in the browser
-Clone the repository
-Request aws_key information and store in config/application.yml
-$bundle install
-$rake db:create
-$rake db:migrate
-$rails server
-Visit http://localhost:3000 in your browser
+Clone the repository<br>
+Request aws_key information and store in config/application.yml<br>
+$bundle install<br>
+$rake db:create<br>
+$rake db:migrate<br>
+$rails server<br>
+Visit http://localhost:3000 in your browser<br>
 
 #Running tests
 Follow steps in 'viewing in the browser'<br>
