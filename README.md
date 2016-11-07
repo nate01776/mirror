@@ -10,12 +10,12 @@
 
 https://mirror-nw.herokuapp.com/
 
-example salon owner account<br>
-- username: test_owner@gmail.com / pw: mirror<br>
-example salon stylist account<br>
-- username: test_sylist@gmail.com / pw: mirror<br>
-example salon client account<br>
-- username: test_client@gmail.com / pw: mirror<br>
+-example salon owner account<br>
+username: test_owner@gmail.com / pw: mirror<br>
+-example salon stylist account<br>
+username: test_sylist@gmail.com / pw: mirror<br>
+-example salon client account<br>
+username: test_client@gmail.com / pw: mirror<br>
 
 
 #Description
